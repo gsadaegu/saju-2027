@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- ... existing code ... -->
+    /*************************************************************************
+     * 4. ZERO-COST LOCAL ULTRA-DETAILED SAJU & 2027 ENGINE (NO API KEY NEEDED)
+     *************************************************************************/
+    const ARCHETYPE_PERSONA_DB = [
+      { outer: '믿음직하고 뚝심 있게 앞장서는 듬직한 리더처럼 보이느니라.', inner: '사실 속으론 남 말에 상처 잘 받고, 한 번 꺾이면 혼자 동굴 파고 숨어버리는 유리 거목일쎄.' },
+      { outer: '누구에게나 다정하고 유연하게 맞춰주는 순한 사람처럼 보이느니라.', inner: '머릿속으론 이미 손익계산 끝내고, 선 넘은 사람 조용히 손절 리스트에 올려두는 야무진 속내구먼.' },
+      { outer: '언제나 에너지 넘치고 쿨하게 웃어넘기는 인싸처럼 보이느니라.', inner: '집에 들어오자마자 방전돼서 카톡 알림 다 꺼두고 혼자 허무함에 잠기는 반전 팔자일쎄.' },
+      { outer: '조용하고 차분하게 자기 일만 챙기는 섬세한 사람처럼 보이느니라.', inner: '한 번 꽂히거나 억울한 일 생기면 새벽 3시까지 머릿속으로 복수 시나리오 쓰는 은근한 불꽃이구먼.' },
+      { outer: '웬만한 일엔 눈 하나 깜짝 안 하는 묵직한 어른처럼 보이느니라.', inner: '남들 고민은 다 들어주면서 정작 내 속마음은 한 마디도 못 꺼내고 혼자 끙끙 앓는 고집불통일쎄.' },
+      { outer: '부지런하고 야무지게 실속 챙기는 모범생처럼 보이느니라.', inner: '의심이 많아서 호의도 한 번씩 꼬아보고, 완벽하지 않으면 시작도 못 해 밤새 고민하는 팔자구먼.' },
+      { outer: '감정 기복 없이 단호하고 시크한 해결사처럼 보이느니라.', inner: '차갑게 말해놓고 집에 가서 “내가 너무 심했나?” 혼자 이불 차는 속 여린 무쇠일쎄.' },
+      { outer: '깔끔하고 완벽해 보이는 도도한 철벽남녀처럼 보이느니라.', inner: '카톡 답장 10분 늦어도 혼자 시나리오 5개 돌리고 작은 말 한마디에 며칠을 앓는 유리 보석이구먼.' },
+      { outer: '스케일 크고 뭐든 대범하게 넘기는 여유로운 사람처럼 보이느니라.', inner: '겉으론 잔잔한데 속으론 온갖 잡생각과 야망이 폭풍처럼 휘몰아쳐 아무도 속을 못 읽는 깊은 바다일쎄.' },
+      { outer: '말수 적고 순둥순둥하게 잘 따라주는 착한 사람처럼 보이느니라.', inner: '상대방 거짓말이랑 의도를 0.5초 만에 다 간파하고 속으로 조용히 평가 끝내는 무서운 눈치백단일쎄.' }
+    ];
+
+    const TENGOD_ANALYSIS_DB = {
+      '비견': {
+        weakness: '주관과 자존심이 강해 남의 조언을 귀담아듣는 척하면서도 결국 내 고집대로 밀어붙이다 돌아가는 패턴이 뚜렷하구먼.',
+        career: '남 밑에서 시키는 대로만 하면 1년 안에 영혼이 마르는 팔자일쎄. 독립적인 재량권이 주어지는 전문직이나 내 이름 걸고 하는 일에서 몸값이 크게 뛸 것이네.',
+        love: '연애할 때도 내 영역과 시간을 존중해 주는 친구 같은 인연이 최고일쎄. 구속하거나 잔소리하는 상대와는 금세 기가 빨려 멀어지느니라.',
+        guess2026: '2026 병오년에 비견·경쟁 기운이 강하게 스치면서, 주변 사람들의 성과나 속도와 은근히 나를 비교하며 “나만 제자리인가?” 조급해졌던 순간이 있었구먼. 겉으론 내 길 간다며 버텼으나 속으로 자존심이 꽤 상했을 것이네.'
+      },
+      '겁재': {
+        weakness: '승부욕과 추진력은 타의 추종을 불허하나, 감정이 달아오르면 계산기 던지고 무리수를 둬서 돈이나 체력을 한 번에 태우는 기질이 보이는구먼.',
+        career: '경쟁이 치열한 판이나 성과가 확실히 갈리는 분야에서 무서운 뒷심을 발휘할 팔자일쎄. 다만 동업이나 지인 추천 투자엔 지갑을 꽁꽁 묶어두어야 돈을 지키느니라.',
+        love: '밀당 없고 화끈한 매력이 있으나, 자존심 싸움이 붙으면 둘 다 안 져서 크게 부딪히기 쉽구먼. 자네의 기세를 유하게 받아줄 여유로운 상대가 찰떡일쎄.',
+        guess2026: '2026 병오년에 사람이나 돈 문제로 신경이 곤두서거나, “내가 손해 보는 거 아닌가?” 싶어 예민해졌던 사건이 스쳐 갔구먼. 지출이 예상보다 크게 새거나 인간관계 정리를 고민했을 것이네.'
+      },
+      '식신': {
+        weakness: '한 우물을 파는 장인 정신과 여유는 훌륭하나, 귀찮음이 발동하면 눈앞에 온 기회도 “다음에 하지 뭐” 하고 미루다 놓치는 버릇이 있느니라.',
+        career: '단기 승부보다 자네만의 콘텐츠·기술·노하우를 차곡차곡 쌓는 일에서 복이 터지는 팔자일쎄. 한 번 궤도에 오르면 평생 먹고살 밥그릇이 마르지 않을 것이네.',
+        love: '편안하고 잔잔하게 오래 가는 연애를 선호하는구먼. 다만 표현이 무덤덤해 상대가 서운해할 수 있으니, 맛있는 거 먹으러 갈 때 다정한 말 한마디만 보태게나.',
+        guess2026: '2026 병오년에 하고 싶은 일이나 배우고 싶은 건 많아졌는데, 막상 체력이나 귀찮음 때문에 중간에 멈칫했던 기억이 보이는구먼. 속으론 “이제 진짜 내 무기 하나 만들어야겠다” 다짐했을 것이네.'
+      },
+      '상관': {
+        weakness: '센스와 말빨, 눈썰미가 남들보다 두 수 위라 답답한 걸 못 참는구먼. 옳은 소리도 너무 직설적으로 찔러서 괜한 적을 만들거나 구설을 부르기 쉬울쎄.',
+        career: '틀에 박힌 반복 업무는 질색이고, 기획·마케팅·크리에이티브·컨설팅처럼 판을 뒤집고 표현하는 자리에서 미친 존재감을 터뜨릴 팔자일쎄.',
+        love: '매력 넘치고 재미있는 연애를 하지만, 상대의 허점이 너무 빨리 눈에 들어와 식는 속도도 빠르구먼. 배울 점이 있고 대화가 통하는 똑똑한 상대라야 오래 가느니라.',
+        guess2026: '2026 병오년에 직장이나 주변의 불합리한 꼴을 보고 속으로 “내가 이거 언제까지 참아야 하나” 몇 번이나 사표나 손절을 떠올렸구먼. 말 한마디 때문에 억울하게 오해받거나 피곤했던 순간도 있었을 것이네.'
+      },
+      '편재': {
+        weakness: '판 키우는 감각과 융통성은 기가 막히나, 한 번에 여러 일을 벌려놓고 마무리가 흐지부지되거나 기분 따라 지출이 커지는 허점이 보이는구먼.',
+        career: '고정 월급에만 갇혀 있기엔 그릇이 큰 사업가·기획자 기질일쎄. 본업 외에 사이드 프로젝트, 영업, 투자 감각을 다듬으면 돈의 파이프라인이 여러 갈래로 열릴 것이네.',
+        love: '센스 있고 다정해서 인기가 많으나, 호기심이 많아 상대에게 불안감을 줄 수 있네. 진심일수록 말보다 확실한 행동과 시간으로 신뢰를 보여주게나.',
+        guess2026: '2026 병오년에 돈 벌 기회나 새로운 판에 눈이 번쩍 뜨여 이것저것 알아봤으나, 생각만큼 깔끔하게 손에 쥐어지지 않아 속이 좀 쓰렸구먼. 바쁘게 움직인 것에 비해 실속을 따져보며 고민이 깊었을 것이네.'
+      },
+      '정재': {
+        weakness: '꼼꼼하고 현실적인 계산력은 일품이나, 리스크를 너무 피하려다 크게 도약할 타이밍에도 안전지대에만 머무는 보수적 습관이 발목을 잡는구먼.',
+        career: '신용과 데이터, 꾸준한 관리가 생명인 조직이나 재무·운영·전문 실무에서 대체 불가한 인재로 인정받을 팔자일쎄. 티끌 모아 태산 만드는 재물 복이 탄탄하느니라.',
+        love: '가벼운 썸보다 진지하고 안정적인 만남을 원하구먼. 다만 연애에서도 손익과 기준을 너무 따지면 로맨스가 메마르니 가끔은 계산기를 내려놓게나.',
+        guess2026: '2026 병오년에 통장 잔고, 커리어 안정성, 미래 계획 같은 현실적인 숫자를 붙잡고 밤마다 머리를 싸맸구먼. 무리한 모험은 피했으나 “이대로 계속 가도 괜찮나?” 하는 답답함이 찾아왔을 것이네.'
+      },
+      '편관': {
+        weakness: '책임감과 해결사 본능이 지나쳐 남의 짐까지 혼자 짊어지고 밤새 스트레스받는 팔자일쎄. 겉으론 멀쩡해 보여도 속으론 번아웃 직전까지 참는 버릇이 위험하구먼.',
+        career: '위기 상황에서 진가를 발휘하는 리더·프로젝트 총괄·전문 자격 분야에서 크게 이름을 날릴 팔자일쎄. 남들이 못 푸는 난제를 해결할수록 명예와 연봉이 수직 상승하느니라.',
+        love: '겉으론 강해 보여도 연인 앞에서는 의지하고 싶은 마음이 크구먼. 자네의 어깨에 얹힌 짐을 조용히 덜어주는 따뜻하고 단단한 인연이 복을 부를 것이네.',
+        guess2026: '2026 병오년에 감당하기 벅찬 업무나 예상치 못한 압박감이 몰려와 “내가 왜 이걸 다 떠안고 있나” 속으로 크게 꺾였던 시기가 있었구먼. 체력과 멘탈을 쥐어짜며 버텨낸 흔적이 역력하네.'
+      },
+      '정관': {
+        weakness: '반듯하고 신뢰감 넘치는 모범생 기질이나, 남의 시선과 체면을 너무 의식해서 정작 내가 원하는 선택을 미루고 눈치만 보느라 에너지를 다 쓰는구먼.',
+        career: '체계가 잡힌 대기업·공공기관·전문 조직에서 차근차근 신뢰를 쌓아 높은 자리에 오를 명예운일쎄. 원칙을 지키되 가끔은 과감하게 내 공을 어필해야 손해를 안 보느니라.',
+        love: '예의 바르고 진중한 만남을 추구하는구먼. 상대방에게도 나만큼의 반듯함을 기대하다 실망할 수 있으니, 작은 허점은 웃으며 넘겨주는 여유를 챙기게나.',
+        guess2026: '2026 병오년에 직책, 평가, 시험, 혹은 주변의 기대치 때문에 남몰래 어깨가 무거웠구먼. “실수하면 안 된다”는 강박으로 겉으론 완벽한 척 넘겼으나 속으론 꽤 지쳐 있었을 것이네.'
+      },
+      '편인': {
+        weakness: '직관력과 아이디어는 천재적이나, 생각이 꼬리에 꼬리를 물어 실행하기도 전에 스스로 김이 빠지거나 남 모르게 고독감에 빠지는 기복이 뚜렷하구먼.',
+        career: '남들과 똑같은 길보다 IT·전략·예술·심리·특수 전문 분야처럼 독창적인 시선이 돈이 되는 곳에서 대박 날 팔자일쎄. 머릿속 아이디어를 문서나 결과물로 꺼내기만 하면 승부가 나느니라.',
+        love: '영혼이 통하는 깊은 대화를 원하지만, 상대가 조금만 선을 넘으면 순식간에 마음의 문을 닫아버리는구먼. 오해가 생기면 혼자 추측하지 말고 바로 물어보는 습관이 약일쎄.',
+        guess2026: '2026 병오년에 남들은 모르는 깊은 고민이나 진로 방황 때문에 혼자 있는 시간이 부쩍 늘었구먼. 번뜩이는 아이디어는 많았는데 주변과 결이 안 맞아 외롭거나 답답했던 순간이 있었을 것이네.'
+      },
+      '정인': {
+        weakness: '포용력과 학습 능력은 뛰어나나, 결정적인 순간에 남의 눈치를 보거나 안전한 길만 찾느라 실행이 한 박자 늦어지는 우유부단함이 약점이구먼.',
+        career: '자격증·학위·전문 지식을 무기 삼아 가르치거나 기획·컨설팅·연구하는 분야에서 윗사람의 인정을 듬뿍 받을 팔자일쎄. 귀인 복이 있어 막힐 때마다 돕는 손길이 나타나느니라.',
+        love: '배려심 깊고 따뜻한 연애를 하지만, 상대를 너무 챙기다 정작 내 감정은 뒷전으로 밀어두기 쉽구먼. 사랑받는 것에도 당당해져야 건강한 인연이 이어지느니라.',
+        guess2026: '2026 병오년에 공부·자격·이직 준비나 새로운 기반을 다지느라 머릿속이 복잡했구먼. 주변의 조언을 듣다 보니 오히려 내 중심이 흔들려 결정을 미뤘던 일이 하나쯤 있을 것이네.'
+      }
+    };
+
+    const DEFICIENT_BOTTLENECK_DB = {
+      0: {
+        bottleneck: '사주에 목(木) 기운이 말라, 머릿속 계획은 완벽한데 막상 첫 삽을 뜨는 실행력과 초반 추진력이 턱없이 부족해 기회를 놓치기 쉽구먼.',
+        prescription: '완벽한 준비는 없느니라! 아침 10분 산책이나 작은 새 프로젝트부터 일단 저질러 보게. 초록 식물 하나 책상에 두는 것만으로도 막힌 목(木) 기운이 트일 것이네.',
+        color: '청록빛 (에메랄드)',
+        item: '책상 위 작은 화분 · 우드 펜'
+      },
+      1: {
+        bottleneck: '사주에 화(火) 기운이 약해, 실력은 충분한데도 남들 앞에 나서서 내 성과를 어필하는 열정과 존재감이 묻혀 손해 보는 일이 잦구먼.',
+        prescription: '겸손도 지나치면 손해일쎄! 내가 한 일은 당당히 드러내고, 햇볕 쬐기와 가벼운 유산소로 식은 화(火) 기운에 불씨를 지피게나.',
+        color: '주홍빛 (버밀리온)',
+        item: '따뜻한 무드 조명 · 레드 포인트 소품'
+      },
+      2: {
+        bottleneck: '사주에 토(土) 기운이 비어, 판은 잘 벌려놓고도 중심이 흔들려 마무리가 약해지거나 들어온 재물이 머물지 못하고 새기 쉬운 형국이구먼.',
+        prescription: '하루 루틴과 가계부부터 단단히 고정하게나! 불규칙한 생활을 끊고 흙의 기운을 담은 꾸준한 저축 습관을 들이면 재물 그릇이 커질 것이네.',
+        color: '황토빛 (버터 옐로우)',
+        item: '도자기 머그컵 · 가죽 지갑'
+      },
+      3: {
+        bottleneck: '사주에 금(金) 기운이 부족해, 거절을 못 하고 질질 끌려다니거나 우유부단하게 미루다가 정작 중요한 마감과 결단 타이밍을 놓치느니라.',
+        prescription: '아닌 인연과 불필요한 약속은 칼같이 쳐내게나! 매일 밤 내일 할 일 딱 3개만 정해 끝맺는 습관이 자네의 금(金) 기운을 날카롭게 세워줄 것이네.',
+        color: '백금빛 (머스터드 골드)',
+        item: '메탈 손목시계 · 깔끔한 체크리스트'
+      },
+      4: {
+        bottleneck: '사주에 수(水) 기운이 말라, 스트레스가 쌓이면 머리가 과열돼 유연한 대처를 못 하고 밤에 잡생각과 불면으로 기력을 소진하기 쉽구먼.',
+        prescription: '감정이 뜨거워질 땐 10분만 자리를 피해 찬물 한 잔 마시고 결정하게나. 물가 산책이나 조용한 독서 루틴이 막힌 수(水) 지혜를 뚫어줄 것이네.',
+        color: '아이스블루 · 깊은 남빛',
+        item: '차가운 물 텀블러 · 아쿠아마린 톤 소품'
+      }
+    };
+
+    const SEWOON_2027_GOD_DB = {
+      '비견': { h1: '내 이름을 걸고 판을 주도하는 상반기일쎄', h1Desc: '丁화 비견이 들어와 주변 눈치 보던 태도를 벗고 내 주관이 또렷해지는 시기구먼. 경쟁자가 생기더라도 기죽지 말고 자네만의 색깔을 밀어붙이게나.', h2: '독립심과 실력을 증명하는 하반기구먼', h2Desc: '未토 비견 기운이 자리 잡으며 남에게 기대던 일을 스스로 해결해 내는 성취감이 클 것이네. 동업보다는 단독 플레이가 훨씬 유리하느니라.', career: '자네의 전문성과 독립적인 영역을 확실히 구축할 타이밍일쎄. 남과 비교하며 조급해하지 말고 내 페이스대로 포트폴리오를 쌓게나.', careerTip: '상반기 안에 나만의 대표 강점 1가지를 명확히 정의해 두게.', money: '공동 투자나 지인 부탁으로 돈이 새기 쉬우니 내 지갑은 내가 지킨다는 원칙을 세우게나.', moneyTip: '지인 간 금전 거래와 보증은 무조건 거절하게.', love: '자존심 싸움만 줄이면 서로를 존중하는 건강한 관계로 발전할 해일쎄.', loveTip: '이기는 말보다 상대 마음을 편하게 하는 말을 고르게나.' },
+      '겁재': { h1: '강한 승부욕으로 판을 흔드는 상반기일쎄', h1Desc: '丁화 겁재가 불을 지피니 가만히 앉아 있질 못하고 새로운 도전이나 경쟁에 뛰어들고 싶어질 것이네. 기세는 좋으나 과속만 주의하게나.', h2: '지출 단속과 사람 선별이 핵심인 하반기구먼', h2Desc: '未토 겁재가 들어오면 주변에 사람이 몰리면서도 은근한 경쟁과 금전 지출이 늘어나느니라. 진짜 내 편과 이용하려는 사람을 가려내야 할 것이네.', career: '치열한 경쟁을 뚫고 성과를 낚아채는 돌파력이 폭발하는 해일쎄. 단, 공을 독차지하려다 팀워크가 깨지지 않게 조율하게나.', careerTip: '큰 계약이나 이직 조건은 반드시 문서로 꼼꼼히 남기게.', money: '돈이 크게 들어왔다가도 한 번에 빠져나가기 쉬운 해구먼. 충동 투자와 과시성 소비만 막아도 큰돈을 지키느니라.', moneyTip: '여윳돈은 즉시 출금 어려운 안전 자산으로 묶어두게.', love: '강렬한 끌림이 찾아오나 질투와 소유욕이 커질 수 있으니 적당한 거리를 유지하게나.', loveTip: '감정이 뜨거울 땐 하루만 지나고 연락하는 여유를 갖게.' },
+      '식신': { h1: '재능과 아이디어가 술술 풀리는 상반기일쎄', h1Desc: '丁화 식신이 들어오니 막혔던 표현력이 트이고 내가 좋아서 하는 일이 슬슬 반응이 오기 시작할 것이네. 꾸준히 파온 우물에서 물이 솟구치는구나!', h2: '여유와 실속이 통장에 쌓이는 하반기구먼', h2Desc: '未토 식신이 단단히 받쳐주며 일과 삶의 균형이 안정되고 의식주 복이 넉넉해질 것이네. 바쁘게 애쓴 보람이 맛있는 결실로 돌아오느니라.', career: '내가 직접 기획하고 만들어내는 콘텐츠·기술·실무에서 호평이 쏟아질 해일쎄. 미루던 사이드 프로젝트가 있다면 2027년이 적기구먼.', careerTip: '완벽주의를 버리고 매주 작은 결과물이라도 세상에 내놓게.', money: '일확천금보다 내 재능이 꾸준한 현금 흐름으로 바뀌는 알짜배기 재물운일쎄.', moneyTip: '먹고 노는 소소한 힐링 지출만 월 한도를 정해두게나.', love: '억지로 애쓰지 않아도 편안하고 따뜻한 기운이 흘러 자연스럽게 호감을 얻는 해구먼.', loveTip: '취미나 맛집 탐방처럼 즐거운 자리에서 좋은 인연이 스며드느니라.' },
+      '상관': { h1: '판을 뒤집고 존재감을 터뜨리는 상반기일쎄', h1Desc: '丁화 상관이 발동하니 답답한 틀을 깨고 이직·독립·새 도전을 향한 욕구가 활활 타오를 것이네. 톡톡 튀는 아이디어로 주목받기 딱 좋은 때일쎄.', h2: '실력을 인정받되 말조심이 생명인 하반기구먼', h2Desc: '未토 상관이 무르익으며 실력만큼은 확실히 인정받겠으나, 윗사람이나 규정과 부딪힐 여지가 크느니라. 옳은 말도 둥글게 포장하는 지혜가 필요할쎄.', career: '틀을 깨는 기획력이나 문제 해결 능력으로 판을 바꿀 절호의 기회구먼. 다만 감정적으로 사표를 던지기 전 다음 발판부터 확보하게나.', careerTip: '회의나 메신저에서 즉각적인 반박 대신 3초 숨 고르고 말하게.', money: '아이디어와 말빨이 곧 돈이 되는 해일쎄. 부업이나 프리랜서, 인센티브 수익을 노려볼 만하구먼.', moneyTip: '기분 전환용 충동 쇼핑만 끊어도 연말 통장이 두둑할 것이네.', love: '매력 지수가 치솟아 다가오는 사람은 많으나, 까다로운 눈높이 탓에 금세 질릴 수 있네.', loveTip: '상대의 단점 하나에 꽂히기보다 장점을 세 번 떠올려 보게.' },
+      '편재': { h1: '돈과 기회의 판이 넓어지는 상반기일쎄', h1Desc: '丁화 편재가 비추니 본업 밖에서도 새로운 수익원이나 흥미로운 제안이 눈에 띄게 늘어나겠구먼. 발 빠르게 움직일수록 먼저 선점할 것이네.', h2: '벌려둔 판에서 알짜 실속을 거두는 하반기구먼', h2Desc: '未토 편재가 현실적인 결과물로 굳어지는 시기일쎄. 여기저기 흩어진 에너지를 돈이 되는 핵심 2가지로 압축해야 크게 웃을 것이네.', career: '영업, 사업 확장, 외부 협업, 네트워킹에서 굵직한 성과가 터질 해일쎄. 책상 앞에만 앉아 있지 말고 사람을 만나 판을 넓히게나.', careerTip: '상반기에 만난 인맥 중 실속 있는 귀인 3명은 꾸준히 챙기게.', money: '재물 회전이 빨라지고 뜻밖의 보너스나 부수입 운이 열리느니라. 다만 욕심내어 무리한 레버리지만 피하게나.', moneyTip: '수입의 30%는 무조건 건드리지 않는 비상금 통장으로 빼두게.', love: '활기찬 모임이나 외부 활동에서 센스 있는 인연을 만날 확률이 높구먼.', loveTip: '바쁘다는 핑계로 소중한 사람에게 소홀해지지 않게 주의하게나.' },
+      '정재': { h1: '안정적인 기반과 실속을 다지는 상반기일쎄', h1Desc: '丁화 정재가 들어오니 허황된 꿈은 접고 눈에 보이는 성과와 통장 숫자에 집중하게 되는 알찬 시기구먼. 성실함이 곧 신용으로 돌아오느니라.', h2: '차곡차곡 쌓은 노력이 자산이 되는 하반기구먼', h2Desc: '未토 정재가 단단히 뿌리내리며 연봉 협상, 저축 목표 달성, 계약 성사 등 손에 잡히는 결실이 뚜렷하게 맺힐 것이네.', career: '화려한 한 방보다 꼼꼼한 일 처리와 신뢰도로 승진이나 핵심 포지션을 꿰찰 해일쎄. 장기적인 커리어 로드맵을 그리기에 최고구먼.', careerTip: '성과를 숫자와 데이터로 정리해 두면 연봉 협상에서 크게 유리할쎄.', money: '새는 구멍이 막히고 정직한 노동과 계획적인 자산 관리로 목돈이 모이는 복된 해일쎄.', moneyTip: '자동이체 적금·장기 우량 자산 위주로 안정적인 구조를 짜게나.', love: '가벼운 만남보다 미래를 함께 그려볼 수 있는 진중하고 성실한 인연운이 강하구먼.', loveTip: '현실적인 조건만 따지다 따뜻한 마음을 놓치지 않게 조심하게.' },
+      '편관': { h1: '묵직한 과제와 함께 급성장하는 상반기일쎄', h1Desc: '丁화 편관이 치고 들어오니 예상치 못한 중책이나 까다로운 과제가 떨어질 수 있구먼. 처음엔 버거워도 이걸 넘기면 자네의 격이 한 단계 올라갈 것이네.', h2: '압박을 뚫고 명예와 실력을 거머쥐는 하반기구먼', h2Desc: '未토 편관이 단단한 훈장으로 바뀌는 흐름일쎄. 체력 관리만 무너지지 않으면 남들이 부러워할 자리나 결과를 손에 쥘 것이네.', career: '승진, 이직, 중대한 프로젝트 리드 등 명예와 책임이 동시에 커지는 해일쎄. 피하지 말고 정면 돌파하면 확실한 입지를 굳히느니라.', careerTip: '혼자 다 떠안지 말고 업무 우선순위와 마감 기한을 분명히 조율하게.', money: '일한 만큼 대가가 따르나 스트레스성 지출이나 건강 관리 비용이 나갈 수 있으니 미리 챙기게나.', moneyTip: '체력이 곧 돈이니 수면과 운동 루틴을 절대 무너뜨리지 말게.', love: '일과 압박감 때문에 연애가 뒷전으로 밀리기 쉽구먼. 차갑게 굴지 말고 힘들 땐 솔직히 기대게나.', loveTip: '연인이나 가족에게 “고맙다, 힘들다” 한마디를 아끼지 말게.' },
+      '정관': { h1: '신뢰와 명예가 빛을 발하는 상반기일쎄', h1Desc: '丁화 정관이 바르게 비추니 그동안 묵묵히 쌓아온 평판이 빛을 보며 합격·승진·좋은 자리 제안이 들어올 운세구먼.', h2: '안정된 궤도 위에서 인정을 굳히는 하반기구먼', h2Desc: '未토 정관이 질서를 잡아주며 흔들리던 생활과 커리어가 반듯한 틀 안에 안착할 것이네. 윗사람과 조직의 신뢰를 한 몸에 받느니라.', career: '취업, 이직, 승진, 자격 취득 등 공식적인 타이틀을 얻기에 더없이 좋은 해일쎄. 정공법과 성실함이 가장 강력한 무기가 될 것이네.', careerTip: '면접·보고·제안서 등 공식 자리에서 단정하고 명확한 태도를 유지하게.', money: '안정적인 급여 상승과 고정 수입이 탄탄해지는 흐름일쎄. 편법이나 단타보다 정석적인 재테크가 복을 부르느니라.', moneyTip: '세금·보험·고정비 점검만 해도 생각보다 큰돈이 굳을 것이네.', love: '소개팅이나 신뢰할 만한 지인의 연결로 반듯하고 예의 바른 인연이 들어오는 해구먼.', loveTip: '너무 완벽하게 보이려 애쓰지 말고 솔직한 매력을 보여주게나.' },
+      '편인': { h1: '번뜩이는 영감과 방향 전환의 상반기일쎄', h1Desc: '丁화 편인이 내면을 깨우니 “이대로는 안 되겠다”는 직감이 들며 새로운 기술·공부·기획에 눈을 뜨는 전환점이 찾아올 것이네.', h2: '독창적인 전문성으로 판을 읽는 하반기구먼', h2Desc: '未토 편인이 깊은 통찰력으로 무르익으며 남들이 못 보는 틈새를 발견할 것이네. 다만 생각이 너무 많아 행동이 멈추지 않게만 주의하게나.', career: 'AI·데이터·기획·콘텐츠·특수 전문 역량을 새로 장착하면 커리어 판도가 완전히 뒤집힐 해일쎄. 배우는 투자를 아끼지 말게나.', careerTip: '머릿속 아이디어는 24시간 안에 메모하고 작은 시제품으로 실행하게.', money: '전통적인 방식보다 지식·정보·특수 기술을 활용한 수익 모델에서 빛이 날 것이네.', moneyTip: '귀가 얇아 검증 안 된 정보에 휩쓸리지 않도록 팩트 체크를 생활화하게.', love: '겉치레보다 정신적 교감이 깊은 인연에 끌리는 해일쎄. 혼자만의 시간도 존중해 주는 상대가 맞느니라.', loveTip: '상대 말을 혼자 확대 해석하지 말고 궁금하면 담백하게 물어보게.' },
+      '정인': { h1: '귀인의 도움과 배움이 열리는 상반기일쎄', h1Desc: '丁화 정인이 따뜻하게 감싸주니 막혔던 일에 의외의 조력자가 나타나고, 문서·계약·자격·학업 운이 순풍을 타듯 풀릴 것이네.', h2: '탄탄한 내공과 문서 복을 쥐는 하반기구먼', h2Desc: '未토 정인이 든든한 울타리가 되어주며 마음의 안정과 함께 부동산·계약·합격 같은 굵직한 문서운이 따라줄 것이네.', career: '윗사람이나 멘토의 추천으로 좋은 기회를 잡거나, 자격증·학위 취득으로 몸값을 높이기 딱 좋은 해일쎄. 배운 걸 현장에 바로 써먹게나.', careerTip: '고민이 생기면 혼자 앓지 말고 경험 많은 선배나 전문가에게 먼저 묻게.', money: '무리한 투자보다 부동산·청약·계약·장기 자산 공부에서 알짜 정보를 건질 운세구먼.', moneyTip: '계약서 도장 찍기 전 특약 사항만 한 번 더 꼼꼼히 살피게나.', love: '나를 진심으로 아껴주고 정서적으로 안정감을 주는 포근한 인연이 곁에 머무는 해일쎄.', loveTip: '받기만 하지 말고 자네도 따뜻한 말과 작은 선물로 마음을 표현하게.' }
+    };
+
+    function applySpicePrefix(spice, mild, medium, nuclear) {
+      if (spice === 'mild') return mild;
+      if (spice === 'nuclear') return nuclear;
+      return medium;
+    }
+
+    function generateLocalRoast(state) {
+      const s = state.saju;
+      const arch = ILGAN_ARCHETYPES[s.dayStem];
+      const persona = ARCHETYPE_PERSONA_DB[s.dayStem];
+      const godInfo = TENGOD_ANALYSIS_DB[s.dominantGod] || TENGOD_ANALYSIS_DB['비견'];
+      const sw26 = s.sewoon2026;
+      const sw26Info = TENGOD_ANALYSIS_DB[sw26.stemGod.name] || godInfo;
+      const defEl = s.deficientElement;
+      const defInfo = DEFICIENT_BOTTLENECK_DB[defEl.id];
+      const amulet = COMPENSATING_AMULETS[defEl.id];
+
+      const oneLiner = applySpicePrefix(
+        state.spice,
+        `허허, ${state.displayName}! 따뜻한 ${arch.shortTitle} 기운에 ${s.dominantGod}의 뚝심을 품었으나 혼자 너무 애쓰고 있구먼.`,
+        `허허, ${state.displayName}! 겉은 점잖은 ${arch.shortTitle}이나 속으론 ${s.dominantGod} 계산기만 밤새 두드리는 팔자일쎄!`,
+        `어허, ${state.displayName}! 타고난 ${arch.shortTitle} 판은 기가 막힌데, ${defEl.ko}(${defEl.hanja}) 부족 탓에 스스로 발목 잡고 있는 꼴이구먼!`
+      );
+
+      const coreBullet1 = `[본캐 해부] ${s.iljuKo}(${s.iljuHanja}) 일간과 ${s.monthBranchLabel} 월지가 맞물린 ${s.strengthHint} 명식일쎄. ${arch.desc} 기질이 강해 남들 눈엔 여유로워 보여도 속으론 이미 시뮬레이션을 백 번도 더 돌렸을 것이네.`;
+      const coreBullet2 = `[십성 역학] 원국에 ${s.dominantGod} 기운이 두드러져 ${godInfo.weakness}`;
+      const coreBullet3 = `[결핍 병목] ${defInfo.bottleneck}`;
+
+      const amuletQuote = `허허, 자네 사주에 비어 있는 ${defEl.ko}(${defEl.hanja}) 기운을 이 ${amulet.shortName}로 채워 ${amulet.traitWord}을 살리게나!`;
+
+      return {
+        oneLiner,
+        keywords: [arch.shortTitle.replace(/\s+/g, ''), `${s.dominantGod}기질`, `${defEl.ko}기운보완`],
+        outerPersona: persona.outer,
+        innerPersona: persona.inner,
+        guess2026: `허허, 자네 올해(2026 병오년)에 천간 ${sw26.stemGod.name}·지지 ${sw26.branchGod.name} 기운이 강하게 들어왔구먼! ${sw26Info.guess2026}`,
+        amuletQuote,
+        coreBullets: [coreBullet1, coreBullet2, coreBullet3],
+        careerOne: godInfo.career,
+        loveOne: godInfo.love,
+        prescription: defInfo.prescription,
+        luckyColor: defInfo.color,
+        luckyItem: defInfo.item
+      };
+    }
+
+    function generateLocal2027(state) {
+      const s = state.saju;
+      const sw = s.sewoon2027;
+      const stemInfo = SEWOON_2027_GOD_DB[sw.stemGod.name] || SEWOON_2027_GOD_DB['정관'];
+      const branchInfo = SEWOON_2027_GOD_DB[sw.branchGod.name] || SEWOON_2027_GOD_DB['식신'];
+      const interJoined = sw.interactions.join(' ');
+
+      // Deterministic, realistic score calculation grounded in natal chart + 2027 interactions
+      const seed = (s.dayStem * 13 + s.dayBranch * 7 + s.monthBranch * 5) % 15;
+      const hasHarm = interJoined.includes('충') || interJoined.includes('형') || interJoined.includes('원진');
+      const hasHarmony = interJoined.includes('합');
+      const bonus = (hasHarmony ? 7 : 0) - (hasHarm ? 4 : 0);
+
+      const careerScore = Math.min(96, Math.max(64, 78 + (seed % 11) + bonus));
+      const moneyScore  = Math.min(95, Math.max(62, 74 + ((seed * 3) % 13) + (sw.branchGod.category === 'jaeseong' || sw.branchGod.category === 'siksang' ? 8 : 0)));
+      const loveScore   = Math.min(94, Math.max(60, 72 + ((seed * 5) % 14) + (hasHarmony ? 6 : 0)));
+      const totalScore  = Math.round((careerScore * 0.4 + moneyScore * 0.35 + loveScore * 0.25));
+
+      const bestMonths = ['9월', '10월', '4월', '11월', '3월', '8월'];
+      const cautionMonths = ['6월', '7월', '12월', '1월', '5월'];
+      const bestMonth = bestMonths[(s.dayStem + s.monthBranch) % bestMonths.length];
+      const cautionMonth = cautionMonths[(s.dayBranch + s.deficientElement.id) % cautionMonths.length];
+
+      const warningText = hasHarm
+        ? `어허, 2027년은 자네 원국에 [${sw.interactions[0]}] 기운이 스치는 해일쎄! ${cautionMonth} 전후로 감정이 달아올라 말실수하거나 홧김에 판을 엎는 것만은 절대 금물이니라.`
+        : applySpicePrefix(
+            state.spice,
+            `허허, 2027년은 좋은 기운이 들어오나 남들 속도에 쫓겨 무리하면 체력이 먼저 꺾일 수 있으니 페이스 조절을 명심하게나.`,
+            `어허, 2027년은 ${sw.stemGod.name} 운이 열리는데도 옛날 습관대로 미루고 눈치만 보다간 다 된 밥을 남에게 뺏길 것이네!`,
+            `어허, 정신 바짝 차리게! 2027 정미년에 ${s.deficientElement.ko}(${s.deficientElement.hanja}) 기운 보완 없이 고집만 부리면 좋은 기회를 코앞에서 날려 먹을 것이네!`
+          );
+
+      return {
+        talisman2027Title: `2027 ${sw.stemGod.name} 개운`,
+        oneLiner: `허허, 2027 정미년엔 ${sw.stemGod.name}의 불빛과 ${sw.branchGod.name}의 결실이 맞물려 판이 바뀔 것이네!`,
+        keywords: [`천간${sw.stemGod.name}`, `지지${sw.branchGod.name}`, `${bestMonth}대박`],
+        scores: { total: totalScore, money: moneyScore, career: careerScore, love: loveScore },
+        firstHalfTitle: stemInfo.h1,
+        firstHalfDesc: stemInfo.h1Desc,
+        secondHalfTitle: branchInfo.h2,
+        secondHalfDesc: branchInfo.h2Desc,
+        bestMonth,
+        bestMonthReason: `자네에게 필요한 오행의 숨통이 트이며 일과 재물 양쪽에서 확실한 희소식이 들려올 황금 달일쎄.`,
+        cautionMonth,
+        cautionMonthReason: `정미년의 화토(火土) 열기가 과열되는 시기니 성급한 계약·말실수·충동 지출을 각별히 조심하게나.`,
+        categories: {
+          career: { text: stemInfo.career, tip: stemInfo.careerTip },
+          money:  { text: branchInfo.money, tip: branchInfo.moneyTip },
+          love:   { text: stemInfo.love, tip: stemInfo.loveTip }
+        },
+        warning: warningText,
+        actionTip: `매달 초 이번 달 반드시 끝맺을 1가지만 종이에 적고, 자네에게 비어 있는 ${s.deficientElement.ko}(${s.deficientElement.hanja}) 개운 루틴을 실천하게나.`
+      };
+    }
+
+    function generateLocalChatReply(question, state) {
+      const q = question.toLowerCase();
+      const s = state.saju;
+      const sw = s.sewoon2027;
+      const defEl = s.deficientElement;
+      const defInfo = DEFICIENT_BOTTLENECK_DB[defEl.id];
+      const ally = ILGAN_ARCHETYPES[s.allyStemIdx];
+      const f27 = state.fortune2027;
+
+      if (q.includes('이직') || q.includes('취업') || q.includes('직장') || q.includes('일') || q.includes('커리어') || q.includes('사업')) {
+        return `허허, ${state.displayName}! 2027 정미년엔 천간 ${sw.stemGod.name} 기운이 열리니 커리어 판을 흔들기 나쁘지 않은 해구먼. 특히 ${f27 ? f27.bestMonth : '하반기'} 전후로 움직이면 유리하고, ${f27 ? f27.cautionMonth : '여름철'}엔 감정적인 퇴사만 피하게나. 자네의 ${s.dominantGod} 강점을 포트폴리오 숫자로 보여주면 승산이 크느니라!`;
+      }
+      if (q.includes('귀인') || q.includes('사람') || q.includes('인간관계') || q.includes('친구')) {
+        return `허허, 자네 사주의 막힌 숨통을 뚫어줄 2027년 최고 귀인은 바로 [${ally.emoji} ${ally.shortTitle}] 같은 ${defEl.ko}(${defEl.hanja}) 기운을 품은 사람일쎄! 평소 자네와 결이 조금 달라 보여도, 차분하게 중심을 잡아주거나 새로운 시각을 던져주는 인연을 귀하게 여기게나.`;
+      }
+      if (q.includes('돈') || q.includes('재물') || q.includes('투자') || q.includes('부자') || q.includes('금전')) {
+        return `허허, 2027년 자네 재물운은 ${f27 ? f27.scores.money + '점' : '탄탄한 흐름'}으로 지지 ${sw.branchGod.name} 기운이 실속을 쥐여주는 형국이구먼! 단, ${f27 ? f27.cautionMonth : '한여름'}의 충동 지출과 남 말만 듣고 들어가는 투자만 끊어도 연말 통장이 묵직해질 것이네.`;
+      }
+      if (q.includes('연애') || q.includes('결혼') || q.includes('사랑') || q.includes('썸') || q.includes('궁합')) {
+        return `허허, 자네는 ${ILGAN_ARCHETYPES[s.dayStem].shortTitle} 기질이라 겉으론 쿨해 보여도 속으론 정을 깊게 주는 편이구먼! 2027년엔 ${sw.stemGod.name}의 기운으로 목적이나 취향이 통하는 자리에서 좋은 인연이 스며들 것이네. 자존심만 반 스푼 내려놓으면 연애운이 확 풀리느니라.`;
+      }
+      if (q.includes('부족') || q.includes('개운') || q.includes('부적') || q.includes('루틴') || q.includes('오행')) {
+        return `허허, 자네 사주에서 가장 먼저 채워야 할 기운은 [${defEl.ko}(${defEl.hanja})]일쎄! ${defInfo.prescription} 위에서 받은 맞춤 부적을 휴대폰 배경에 두고 '${defInfo.color}' 소품을 가까이 두면 운의 흐름이 훨씬 부드러워질 것이네.`;
+      }
+      return `허허, ${state.displayName}! 자네의 ${s.iljuKo}(${s.iljuHanja}) 일주와 2027 정미년(${sw.stemGod.name}·${sw.branchGod.name}) 기운을 함께 보니, 조급함만 덜어내고 ${f27 ? f27.bestMonth : '하반기'} 승부처에 집중하면 분명 좋은 소식이 들려올 것이네. 더 깊은 1:1 맞춤 전략이 궁금하다면 위 [무료 젬선생 업그레이드]로 심층 상담을 이어가 보게나!`;
+    }
+
+    /*************************************************************************
+     * 5. UI RENDERERS & RITUAL LOADING CONTROLLER
+     *************************************************************************/
+<!-- ... existing code ... -->
+    // Local Instant Saju & 2027 Loaders (Zero-Cost, Zero-API)
+    function loadMainRoast() {
+      document.getElementById('retry-roast-btn').classList.add('hidden');
+      const res = generateLocalRoast(appState);
+      appState.roast = res;
+      renderRoastUI(res);
+    }
+
+    function load2027Fortune() {
+      document.getElementById('retry-2027-btn').classList.add('hidden');
+      const res = generateLocal2027(appState);
+      appState.fortune2027 = res;
+      render2027UI(res);
+    }
+
+    document.getElementById('retry-roast-btn').addEventListener('click', loadMainRoast);
+    document.getElementById('retry-2027-btn').addEventListener('click', load2027Fortune);
+
+    // Form Submission
+    document.getElementById('saju-form').addEventListener('submit', async (e) => {
+<!-- ... existing code ... -->
+      // Show Mystical Ritual Overlay briefly for ceremonial immersion
+      showRitualOverlay();
+      loadMainRoast();
+      load2027Fortune();
+      await new Promise((r) => setTimeout(r, 1100));
+
+      hideRitualOverlay();
+
+      document.getElementById('input-view').classList.add('hidden');
+<!-- ... existing code ... -->
+    function askGemSeonsaeng(question) {
+      if (!question.trim() || !appState.saju) return;
+      const input = document.getElementById('chat-input');
+      const btn = document.getElementById('chat-send-btn');
+
+      input.value = '';
+      input.disabled = true;
+      btn.disabled = true;
+
+      appendChatBubble('user', question);
+      appendChatBubble('model', '허허, 잠깐만 기다리게나. 별자리를 다시 짚어보는 중일쎄...', true);
+
+      setTimeout(() => {
+        const reply = generateLocalChatReply(question, appState);
+        document.getElementById('chat-temp-bubble')?.remove();
+        appendChatBubble('model', reply);
+        input.disabled = false;
+        btn.disabled = false;
+        input.focus();
+      }, 480);
+    }
+
+    document.getElementById('chat-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      askGemSeonsaeng(document.getElementById('chat-input').value);
+    });
+
+    document.querySelectorAll('.chip-btn').forEach((chip) => {
+      chip.addEventListener('click', () => askGemSeonsaeng(chip.textContent.trim()));
+    });
+  </script>
+</body>
+</html>
