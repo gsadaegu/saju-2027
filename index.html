@@ -176,7 +176,7 @@
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* Graphic Hanging Tag (Reference Image Motif) */
+    /* Graphic Hanging Tag */
     .oh-strip-tag {
       position: relative;
       display: flex;
@@ -219,7 +219,7 @@
     .spin-slow { animation: slowSpin 16s linear infinite; }
     .spin-reverse { animation: reverseSpin 11s linear infinite; }
 
-    /* Bold Graphic Flat Talisman Preview Styles (Directly inspired by reference poster) */
+    /* Bold Graphic Flat Talisman Preview Styles */
     .talisman-wood  { background: #639239; color: #0A0A0A; }
     .talisman-fire  { background: #DA2C14; color: #0A0A0A; }
     .talisman-earth { background: #FBF099; color: #0A0A0A; }
@@ -246,7 +246,7 @@
   <!-- Subtle Geometric Oh-Haeng Background Canvas -->
   <canvas id="starfield-canvas"></canvas>
 
-  <!-- Custom Toast Notification Stack (No alert/confirm) -->
+  <!-- Custom Toast Notification Stack -->
   <div id="toast-container" class="fixed top-4 left-1/2 -translate-x-1/2 z-[70] w-[92%] max-w-[440px] flex flex-col gap-2 pointer-events-none"></div>
 
   <!-- Graphic Ritual Loading Overlay -->
@@ -343,7 +343,7 @@
       ================================================================= -->
       <section id="input-view" class="space-y-5 animate-fade-up">
 
-        <!-- Iconic 5 Oh-Haeng Graphic Hanging Tags Banner (Reference Image Style) -->
+        <!-- Iconic 5 Oh-Haeng Graphic Hanging Tags Banner -->
         <div class="bg-[#000000] p-2.5 rounded-2xl border-2 border-[#2A2A2A] shadow-[4px_4px_0px_#000]">
           <div class="grid grid-cols-5 gap-1.5 h-[132px]">
             <!-- 金 Metal -->
@@ -451,8 +451,8 @@
                 type="date"
                 id="birth-date"
                 value="1997-05-14"
-                min="1930-01-01"
-                max="2026-12-31"
+                min="1900-01-01"
+                max="2099-12-31"
                 required
                 class="mystic-input w-full px-4 rounded-xl text-[15px] font-semibold"
               />
@@ -534,7 +534,7 @@
                 <h2 id="profile-title" class="font-serif text-[15px] font-bold text-main truncate">자네의 명식</h2>
                 <span id="profile-spice-badge" class="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded bg-[#DA2C14] text-white">🔥 매운맛</span>
               </div>
-              <p id="profile-meta" class="text-[11.5px] text-muted truncate mt-0.5">양력 1997.05.14 · 오시 · 곤명</p>
+              <p id="profile-meta" class="text-[11.5px] text-muted truncate mt-0.5">양력 1997.05.14 · 오시 · 여성</p>
             </div>
           </div>
           <div class="shrink-0 text-right">
@@ -665,21 +665,11 @@
              TAB 2: 팩폭 풀이 (Condensed, High-Impact Viral Saju Reading)
         =============================================================== -->
         <div id="tab-roast" class="tab-panel hidden space-y-4 animate-fade-up">
-
-          <!-- Inline Loading Fallback if user switches early -->
-          <div id="roast-loading" class="mystic-card rounded-2xl p-6 text-center space-y-3">
-            <div class="text-2xl animate-pulse">🕯️</div>
-            <p class="font-serif text-sm text-gold">허허, 잠깐만 기다리게나. 자네 사주의 속내를 정밀하게 뜯어보는 중일쎄...</p>
-          </div>
-
-          <div id="roast-content" class="hidden space-y-4">
+          <div id="roast-content" class="space-y-4">
             <!-- 1. 한 줄 천기누설 + 겉캐 vs 속캐 (캡처·공유 핵심 카드) -->
             <section class="mystic-card rounded-2xl p-5 border-l-4 border-l-antiqueGold">
               <div class="flex items-center justify-between gap-2 mb-2.5">
                 <span class="text-[11px] font-bold tracking-wider text-gold uppercase">✦ 젬선생의 한 줄 천기누설</span>
-                <button type="button" id="retry-roast-btn" class="hidden text-[11px] font-bold px-2.5 py-1 rounded-lg bg-crimsonSeal/20 text-crimson cursor-pointer">
-                  다시 점치기
-                </button>
               </div>
               <p id="ai-oneliner" class="font-serif text-[18.5px] font-bold text-main leading-snug"></p>
               <div id="ai-roast-keywords" class="flex flex-wrap gap-1.5 mt-3"></div>
@@ -735,7 +725,7 @@
               <div class="p-3.5 rounded-xl mystic-subcard border border-antiqueGold/35">
                 <span class="block text-[11px] font-bold text-gold mb-1">📜 도사의 개운 처방전</span>
                 <p id="ai-prescription" class="text-[14.5px] text-main/95 leading-[1.72] mb-2.5"></p>
-                <div class="flex items-center gap-2 text-xs">
+                <div class="flex flex-wrap items-center gap-2 text-xs">
                   <span class="px-2.5 py-1 rounded-lg bg-antiqueGold/15 text-gold font-bold">🎨 <span id="ai-lucky-color">-</span></span>
                   <span class="px-2.5 py-1 rounded-lg bg-white/5 text-main font-semibold border" style="border-color: var(--card-border);">🍀 <span id="ai-lucky-item">-</span></span>
                 </div>
@@ -786,19 +776,11 @@
             </div>
           </section>
 
-          <div id="fortune2027-loading" class="mystic-card rounded-2xl p-6 text-center space-y-3">
-            <div class="text-2xl animate-pulse">🌕</div>
-            <p class="font-serif text-sm text-gold">허허, 2027 정미년의 별자리를 마저 짚어보는 중일쎄...</p>
-          </div>
-
-          <div id="fortune2027-content" class="hidden space-y-4">
+          <div id="fortune2027-content" class="space-y-4">
             <!-- 2027 Headline -->
             <section class="mystic-card rounded-2xl p-5 border-l-4 border-l-crimsonSeal">
               <div class="flex items-center justify-between gap-2 mb-2">
                 <span class="text-[11px] font-bold text-crimson tracking-wider">✦ 2027년 젬선생 총평</span>
-                <button type="button" id="retry-2027-btn" class="hidden text-[11px] font-bold px-2.5 py-1 rounded-lg bg-crimsonSeal/20 text-crimson cursor-pointer">
-                  다시 점치기
-                </button>
               </div>
               <p id="f27-oneliner" class="font-serif text-[18px] font-bold text-main leading-snug"></p>
               <div id="f27-keywords" class="flex flex-wrap gap-1.5 mt-3"></div>
@@ -905,9 +887,9 @@
               </button>
             </div>
 
-            <!-- Live Mobile Graphic Hanging-Tag Talisman Preview (Directly matching reference poster) -->
+            <!-- Live Mobile Graphic Hanging-Tag Talisman Preview -->
             <div id="talisman-preview-box" class="talisman-water talisman-frame rounded-2xl px-6 py-6 text-center text-[#0A0A0A]">
-              <!-- Top Punch-Hole Dot (Signature Reference Detail) -->
+              <!-- Top Punch-Hole Dot -->
               <div class="flex justify-center mb-3">
                 <span class="w-6 h-6 rounded-full bg-[#080808] inline-block shadow-inner"></span>
               </div>
@@ -935,7 +917,7 @@
 
               <div id="card-keywords" class="flex flex-wrap justify-center gap-1.5 mb-4"></div>
 
-              <!-- Bottom Geometric Oh-Haeng Symbol (Reference Image Motif) -->
+              <!-- Bottom Geometric Oh-Haeng Symbol -->
               <div id="card-geo-symbol" class="flex justify-center my-2">
                 <!-- Populated via JS -->
               </div>
@@ -1000,7 +982,7 @@
             </div>
           </section>
 
-          <!-- SECTION C: 젬선생 즉석 문답 (In-App Quick Q&A) -->
+          <!-- SECTION C: 젬선생 즉석 문답 (In-App Quick Q&A - 100% Zero-Cost Local Engine) -->
           <section class="mystic-card rounded-2xl p-4">
             <div class="mb-3">
               <h3 class="font-serif text-base font-bold text-main">젬선생 즉석 문답</h3>
@@ -1014,6 +996,9 @@
               </button>
               <button type="button" class="chip-btn shrink-0 px-3 min-h-[38px] rounded-full text-xs font-semibold border text-gold transition cursor-pointer active:scale-95" style="background: var(--pill-bg); border-color: var(--card-border);">
                 내 사주에 귀인이 언제 들어오나?
+              </button>
+              <button type="button" class="chip-btn shrink-0 px-3 min-h-[38px] rounded-full text-xs font-semibold border text-gold transition cursor-pointer active:scale-95" style="background: var(--pill-bg); border-color: var(--card-border);">
+                돈 모으려면 뭘 조심해?
               </button>
               <button type="button" class="chip-btn shrink-0 px-3 min-h-[38px] rounded-full text-xs font-semibold border text-gold transition cursor-pointer active:scale-95" style="background: var(--pill-bg); border-color: var(--card-border);">
                 부족한 기운을 일상에서 채우려면?
@@ -1055,11 +1040,11 @@
   <canvas id="talisman-canvas" width="1080" height="1350" class="hidden"></canvas>
 
   <!-- =====================================================================
-       APPLICATION JAVASCRIPT
+       APPLICATION JAVASCRIPT (100% ZERO-COST LOCAL ULTRA-DETAILED ENGINE)
   ====================================================================== -->
   <script>
     /*************************************************************************
-     * 1. SUBTLE GEOMETRIC OH-HAENG BACKGROUND CANVAS (Minimal Graphic Motif)
+     * 1. SUBTLE GEOMETRIC OH-HAENG BACKGROUND CANVAS
      *************************************************************************/
     (function initGraphicBg() {
       const canvas = document.getElementById('starfield-canvas');
@@ -1076,7 +1061,7 @@
           x: Math.random() * w,
           y: Math.random() * h,
           size: Math.random() * 8 + 5,
-          type: i % 4, // 0: circle, 1: triangle, 2: bar, 3: dot
+          type: i % 4,
           color: palette[i % 5],
           vy: -(Math.random() * 0.12 + 0.03),
           alpha: Math.random() * 0.22 + 0.08
@@ -1132,7 +1117,6 @@
       { id: 4, key: 'water', ko: '수', hanja: '水', hex: '#BAE2EA', textHex: '#080808', meaning: '지혜·유연성' }
     ];
 
-    /* Geometric Oh-Haeng SVG Icons matching the reference poster */
     const OH_GEO_SVG = {
       0: `<svg class="w-10 h-10" viewBox="0 0 24 24" fill="#080808"><circle cx="12" cy="12" r="9"/></svg>`,
       1: `<svg class="w-10 h-10" viewBox="0 0 24 24" fill="#080808"><path d="M12.5 2C11 6 7 7.8 7 13a5.5 5.5 0 0 0 11 0c0-3.2-2-5.8-3.2-7.5-.3 1.7-1.4 2.5-2.1 2.5 1-2.2.8-4.5-.2-6Z"/></svg>`,
@@ -1154,7 +1138,6 @@
       { hanja: '癸', ko: '계', el: 4, pol: 0 }
     ];
 
-    /* 10 Day Master Natural Archetypes (일간 물상론) */
     const ILGAN_ARCHETYPES = [
       { emoji: '🌲', shortTitle: '하늘을 찌르는 거목', hanjaLabel: '甲木 · 갑목', desc: '꺾이지 않는 직진 본능과 리더 기질의 큰 나무', sageNote: '“허허, 한 번 뿌리 내리면 웬만한 바람엔 꿈쩍도 안 하는 우직한 거목이로구먼. 다만 융통성이 좀 뻣뻣할 수 있네!”' },
       { emoji: '🌿', shortTitle: '꺾이지 않는 들꽃', hanjaLabel: '乙木 · 을목', desc: '부드러운 생존력과 눈치 빠른 유연함의 화초', sageNote: '“허허, 겉은 여려 보여도 밟히면 다시 일어나는 질긴 생명력을 품었구먼! 속으론 현실 계산이 꽤 야무질쎄.”' },
@@ -1192,18 +1175,9 @@
     ];
 
     const SPICE_META = {
-      mild: {
-        badge: '🕯️ 순한맛',
-        promptGuide: '인자하고 따뜻한 도사님 말투("허허, 자네 참 애쓰고 있구먼...", "~그럴쎄", "~할 것이네", "~명심하게나")로 부드럽게 토닥이되, 핵심 약점은 따끔하게 짚어주게.'
-      },
-      medium: {
-        badge: '🔥 매운맛',
-        promptGuide: '송곳처럼 날카롭고 유쾌한 도사님 팩폭 말투("허허, 그럴쎄!", "어허, 자네 겉만 번지르르하고 속은 딴생각이 가득하구먼!", "~보이는구먼", "~하느니라")로 현대 MZ의 현실을 웃기면서도 뼈아프게 찔러주게.'
-      },
-      nuclear: {
-        badge: '💀 핵불닭맛',
-        promptGuide: '천기누설 독설 도사님 모드("허허, 기가 차서 말이 안 나오는구먼!", "어허, 정신 차리게!", "자네 그 고집 안 꺾으면 2027년에도 똑같을 것이네!")로 욕설이나 선 넘는 인신공격 없이 사주의 모순을 영혼까지 탈탈 털어주게.'
-      }
+      mild:    { badge: '🕯️ 순한맛' },
+      medium:  { badge: '🔥 매운맛' },
+      nuclear: { badge: '💀 핵불닭맛' }
     };
 
     const SIJIN_LABELS = [
@@ -1212,16 +1186,8 @@
       '신시(申)', '유시(酉)', '술시(戌)', '해시(亥)'
     ];
 
-    const RITUAL_MESSAGES = [
-      '“허허, 자네의 년·월·일·시 여덟 글자를 펼쳐보는 중일쎄...”',
-      '“오행의 균형과 비어 있는 기운을 짚어내는 중일쎄...”',
-      '“2027 정미년의 불꽃이 자네 사주에 어찌 닿을지 살피는 중일쎄...”',
-      '“어허, 숨겨둔 십성 조합의 속내가 다 보이는구먼...”'
-    ];
-
     const GEMINI_SIGNUP_URL = 'https://cutly.kr/156ex4';
 
-    /* 5 Personalized Compensating Amulets mapped by Element ID (0:목, 1:화, 2:토, 3:금, 4:수) */
     const COMPENSATING_AMULETS = {
       0: {
         cssClass: 'talisman-wood',
@@ -1340,13 +1306,11 @@
     }
 
     function calculateSaju({ solarYear, solarMonth, solarDay, hourBranch, unknownTime }) {
-      // 1. Year Pillar (입춘 기준)
       const ipchunDay = getJieqiDay(solarYear, 2);
       const sajuYear = (solarMonth < 2 || (solarMonth === 2 && solarDay < ipchunDay)) ? solarYear - 1 : solarYear;
       const yearStem = ((sajuYear - 4) % 10 + 10) % 10;
       const yearBranch = ((sajuYear - 4) % 12 + 12) % 12;
 
-      // 2. Month Pillar (12절기 & 오호둔법)
       const jieqiDay = getJieqiDay(solarYear, solarMonth);
       let effMonth = solarMonth;
       if (solarDay < jieqiDay) effMonth = solarMonth === 1 ? 12 : solarMonth - 1;
@@ -1354,13 +1318,11 @@
       const monthBranch = (mIdx + 2) % 12;
       const monthStem = (((yearStem % 5) * 2 + 2) % 10 + mIdx) % 10;
 
-      // 3. Day Pillar (Verified anchor: 1900-01-01 = 갑술, 60갑자 index 10)
       const dayOffset = Math.round((Date.UTC(solarYear, solarMonth - 1, solarDay) - Date.UTC(1900, 0, 1)) / 86400000);
       const dayIndex = ((10 + dayOffset) % 60 + 60) % 60;
       const dayStem = dayIndex % 10;
       const dayBranch = dayIndex % 12;
 
-      // 4. Hour Pillar (오자둔법)
       let hourStem = null, hBranch = null;
       if (!unknownTime) {
         hBranch = hourBranch;
@@ -1402,30 +1364,25 @@
           catGods[p.stemGod.category].push(p.stemGod.name);
         }
         catCounts[p.branchGod.category]++;
-        godCounts[p.branchGod.name] = (godCounts[p.branchGod.name] || 0) + 1;
+        godCounts[p.branchGod.name] = (godCounts[p.branchGod.name] || 0) + (p.title === '월주' ? 1.5 : 1);
         catGods[p.branchGod.category].push(p.branchGod.name);
       });
 
       const sortedGods = Object.entries(godCounts).sort((a, b) => b[1] - a[1]);
       const dominantGod = sortedGods.length ? sortedGods[0][0] : '비견';
 
-      // Primary Deficient / Compensating Element Detection
-      // Priority tie-breaker balances 2027 정미년's dry Fire/Earth: 수(4) > 금(3) > 목(0) > 토(2) > 화(1)
       const tiePriority = [4, 3, 0, 2, 1];
       let minCount = Math.min(...elCounts);
       let deficientElIdx = tiePriority.find((idx) => elCounts[idx] === minCount);
       if (deficientElIdx === undefined) deficientElIdx = 4;
       const deficientElement = ELEMENTS[deficientElIdx];
 
-      // Approximate 신강/신약 Tendency (비겁 + 인성 vs 식상 + 재성 + 관성)
       const supportPower = catCounts.bigeop + catCounts.inseong;
       const drainPower = catCounts.siksang + catCounts.jaeseong + catCounts.gwanseong;
       let strengthHint = '중화(균형형)';
       if (supportPower >= drainPower + 2) strengthHint = '신강(주체성 강함)';
       else if (drainPower >= supportPower + 2) strengthHint = '신약(외부 자극 민감)';
 
-      // 2027 정미년 (丁未年) Sewoon: 丁 = 음화(el:1, pol:0), 未 = 음토(el:2, pol:0)
-      // Also detect key Earthly Branch interactions with 未(7)
       const presentBranches = pillars.filter((p) => !p.unknown).map((p) => ({ title: p.title, ko: p.branch.ko, hanja: p.branch.hanja }));
       const branchSet = new Set(presentBranches.map((b) => b.hanja));
       const interactions = [];
@@ -1444,15 +1401,13 @@
         interactions
       };
 
-      // 2026 병오년 (丙午年) Sewoon: 丙 = 양화(el:1, pol:1), 午 = 음화(el:1, pol:0)
       const sewoon2026 = {
         stemGod: getTenGod(dayStem, 1, 1),
         branchGod: getTenGod(dayStem, 1, 0)
       };
 
-      // Viral Matchmaking: 귀인 물상 (stem of deficientElement with complementary polarity) & 상극 물상 (controlling/clashing stem)
       const allyStemIdx = deficientElIdx * 2 + (STEMS[dayStem].pol === 1 ? 1 : 0);
-      const clashElIdx = (STEMS[dayStem].el + 3) % 5; // 나를 극하는 오행(관성/충돌 기운)
+      const clashElIdx = (STEMS[dayStem].el + 3) % 5;
       const clashStemIdx = clashElIdx * 2 + (STEMS[dayStem].pol === 1 ? 0 : 1);
 
       return {
@@ -1473,243 +1428,258 @@
     }
 
     /*************************************************************************
-     * 4. GEMINI API CLIENT (WITH EXPONENTIAL BACKOFF)
+     * 4. ZERO-COST LOCAL ULTRA-DETAILED SAJU & 2027 ENGINE (NO API KEY NEEDED)
      *************************************************************************/
-    const API_KEY = ""; // Runtime-provided
-    const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${API_KEY}`;
+    const ARCHETYPE_PERSONA_DB = [
+      { outer: '믿음직하고 뚝심 있게 앞장서는 듬직한 리더처럼 보이느니라.', inner: '사실 속으론 남 말에 상처 잘 받고, 한 번 꺾이면 혼자 동굴 파고 숨어버리는 유리 거목일쎄.' },
+      { outer: '누구에게나 다정하고 유연하게 맞춰주는 순한 사람처럼 보이느니라.', inner: '머릿속으론 이미 손익계산 끝내고, 선 넘은 사람 조용히 손절 리스트에 올려두는 야무진 속내구먼.' },
+      { outer: '언제나 에너지 넘치고 쿨하게 웃어넘기는 인싸처럼 보이느니라.', inner: '집에 들어오자마자 방전돼서 카톡 알림 다 꺼두고 혼자 허무함에 잠기는 반전 팔자일쎄.' },
+      { outer: '조용하고 차분하게 자기 일만 챙기는 섬세한 사람처럼 보이느니라.', inner: '한 번 꽂히거나 억울한 일 생기면 새벽 3시까지 머릿속으로 복수 시나리오 쓰는 은근한 불꽃이구먼.' },
+      { outer: '웬만한 일엔 눈 하나 깜짝 안 하는 묵직한 어른처럼 보이느니라.', inner: '남들 고민은 다 들어주면서 정작 내 속마음은 한 마디도 못 꺼내고 혼자 끙끙 앓는 고집불통일쎄.' },
+      { outer: '부지런하고 야무지게 실속 챙기는 모범생처럼 보이느니라.', inner: '의심이 많아서 호의도 한 번씩 꼬아보고, 완벽하지 않으면 시작도 못 해 밤새 고민하는 팔자구먼.' },
+      { outer: '감정 기복 없이 단호하고 시크한 해결사처럼 보이느니라.', inner: '차갑게 말해놓고 집에 가서 “내가 너무 심했나?” 혼자 이불 차는 속 여린 무쇠일쎄.' },
+      { outer: '깔끔하고 완벽해 보이는 도도한 철벽남녀처럼 보이느니라.', inner: '카톡 답장 10분 늦어도 혼자 시나리오 5개 돌리고 작은 말 한마디에 며칠을 앓는 유리 보석이구먼.' },
+      { outer: '스케일 크고 뭐든 대범하게 넘기는 여유로운 사람처럼 보이느니라.', inner: '겉으론 잔잔한데 속으론 온갖 잡생각과 야망이 폭풍처럼 휘몰아쳐 아무도 속을 못 읽는 깊은 바다일쎄.' },
+      { outer: '말수 적고 순둥순둥하게 잘 따라주는 착한 사람처럼 보이느니라.', inner: '상대방 거짓말이랑 의도를 0.5초 만에 다 간파하고 속으로 조용히 평가 끝내는 무서운 눈치백단일쎄.' }
+    ];
 
-    async function fetchGeminiWithBackoff(payload, maxRetries = 4) {
-      let delay = 1000;
-      for (let attempt = 0; attempt <= maxRetries; attempt++) {
-        try {
-          const res = await fetch(GEMINI_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-          });
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          return await res.json();
-        } catch (err) {
-          if (attempt === maxRetries) throw err;
-          await new Promise((r) => setTimeout(r, delay));
-          delay *= 2;
-        }
+    const TENGOD_ANALYSIS_DB = {
+      '비견': {
+        weakness: '주관과 자존심이 강해 남의 조언을 귀담아듣는 척하면서도 결국 내 고집대로 밀어붙이다 돌아가는 패턴이 뚜렷하구먼.',
+        career: '남 밑에서 시키는 대로만 하면 1년 안에 영혼이 마르는 팔자일쎄. 독립적인 재량권이 주어지는 전문직이나 내 이름 걸고 하는 일에서 몸값이 크게 뛸 것이네.',
+        love: '연애할 때도 내 영역과 시간을 존중해 주는 친구 같은 인연이 최고일쎄. 구속하거나 잔소리하는 상대와는 금세 기가 빨려 멀어지느니라.',
+        guess2026: '2026 병오년에 경쟁 기운이 강하게 스치면서 주변 사람들의 속도와 은근히 나를 비교하며 “나만 제자리인가?” 조급해졌던 순간이 있었구먼. 겉으론 내 길 간다며 버텼으나 속으로 자존심이 꽤 상했을 것이네.'
+      },
+      '겁재': {
+        weakness: '승부욕과 추진력은 타의 추종을 불허하나, 감정이 달아오르면 계산기 던지고 무리수를 둬서 돈이나 체력을 한 번에 태우는 기질이 보이는구먼.',
+        career: '경쟁이 치열한 판이나 성과가 확실히 갈리는 분야에서 무서운 뒷심을 발휘할 팔자일쎄. 다만 동업이나 지인 추천 투자엔 지갑을 꽁꽁 묶어두어야 돈을 지키느니라.',
+        love: '밀당 없고 화끈한 매력이 있으나, 자존심 싸움이 붙으면 둘 다 안 져서 크게 부딪히기 쉽구먼. 자네의 기세를 유하게 받아줄 여유로운 상대가 찰떡일쎄.',
+        guess2026: '2026 병오년에 사람이나 돈 문제로 신경이 곤두서거나 “내가 손해 보는 거 아닌가?” 싶어 예민해졌던 사건이 스쳐 갔구먼. 지출이 예상보다 크게 새거나 인간관계 정리를 고민했을 것이네.'
+      },
+      '식신': {
+        weakness: '한 우물을 파는 장인 정신과 여유는 훌륭하나, 귀찮음이 발동하면 눈앞에 온 기회도 “다음에 하지 뭐” 하고 미루다 놓치는 버릇이 있느니라.',
+        career: '단기 승부보다 자네만의 콘텐츠·기술·노하우를 차곡차곡 쌓는 일에서 복이 터지는 팔자일쎄. 한 번 궤도에 오르면 평생 먹고살 밥그릇이 마르지 않을 것이네.',
+        love: '편안하고 잔잔하게 오래 가는 연애를 선호하는구먼. 다만 표현이 무덤덤해 상대가 서운해할 수 있으니 맛있는 거 먹으러 갈 때 다정한 말 한마디만 보태게나.',
+        guess2026: '2026 병오년에 하고 싶은 일이나 배우고 싶은 건 많아졌는데, 막상 체력이나 귀찮음 때문에 중간에 멈칫했던 기억이 보이는구먼. 속으론 “이제 진짜 내 무기 하나 만들어야겠다” 다짐했을 것이네.'
+      },
+      '상관': {
+        weakness: '센스와 말빨, 눈썰미가 남들보다 두 수 위라 답답한 걸 못 참는구먼. 옳은 소리도 너무 직설적으로 찔러서 괜한 적을 만들거나 구설을 부르기 쉬울쎄.',
+        career: '틀에 박힌 반복 업무는 질색이고, 기획·마케팅·크리에이티브·컨설팅처럼 판을 뒤집고 표현하는 자리에서 미친 존재감을 터뜨릴 팔자일쎄.',
+        love: '매력 넘치고 재미있는 연애를 하지만 상대의 허점이 너무 빨리 눈에 들어와 식는 속도도 빠르구먼. 배울 점이 있고 대화가 통하는 똑똑한 상대라야 오래 가느니라.',
+        guess2026: '2026 병오년에 직장이나 주변의 불합리한 꼴을 보고 속으로 “내가 이거 언제까지 참아야 하나” 몇 번이나 사표나 손절을 떠올렸구먼. 말 한마디 때문에 억울하게 오해받거나 피곤했던 순간도 있었을 것이네.'
+      },
+      '편재': {
+        weakness: '판 키우는 감각과 융통성은 기가 막히나, 한 번에 여러 일을 벌려놓고 마무리가 흐지부지되거나 기분 따라 지출이 커지는 허점이 보이는구먼.',
+        career: '고정 월급에만 갇혀 있기엔 그릇이 큰 사업가·기획자 기질일쎄. 본업 외에 사이드 프로젝트, 영업, 투자 감각을 다듬으면 돈의 파이프라인이 여러 갈래로 열릴 것이네.',
+        love: '센스 있고 다정해서 인기가 많으나 호기심이 많아 상대에게 불안감을 줄 수 있네. 진심일수록 말보다 확실한 행동과 시간으로 신뢰를 보여주게나.',
+        guess2026: '2026 병오년에 돈 벌 기회나 새로운 판에 눈이 번쩍 뜨여 이것저것 알아봤으나, 생각만큼 깔끔하게 손에 쥐어지지 않아 속이 좀 쓰렸구먼. 바쁘게 움직인 것에 비해 실속을 따져보며 고민이 깊었을 것이네.'
+      },
+      '정재': {
+        weakness: '꼼꼼하고 현실적인 계산력은 일품이나, 리스크를 너무 피하려다 크게 도약할 타이밍에도 안전지대에만 머무는 보수적 습관이 발목을 잡는구먼.',
+        career: '신용과 데이터, 꾸준한 관리가 생명인 조직이나 재무·운영·전문 실무에서 대체 불가한 인재로 인정받을 팔자일쎄. 티끌 모아 태산 만드는 재물 복이 탄탄하느니라.',
+        love: '가벼운 썸보다 진지하고 안정적인 만남을 원하구먼. 다만 연애에서도 손익과 기준을 너무 따지면 로맨스가 메마르니 가끔은 계산기를 내려놓게나.',
+        guess2026: '2026 병오년에 통장 잔고, 커리어 안정성, 미래 계획 같은 현실적인 숫자를 붙잡고 밤마다 머리를 싸맸구먼. 무리한 모험은 피했으나 “이대로 계속 가도 괜찮나?” 하는 답답함이 찾아왔을 것이네.'
+      },
+      '편관': {
+        weakness: '책임감과 해결사 본능이 지나쳐 남의 짐까지 혼자 짊어지고 밤새 스트레스받는 팔자일쎄. 겉으론 멀쩡해 보여도 속으론 번아웃 직전까지 참는 버릇이 위험하구먼.',
+        career: '위기 상황에서 진가를 발휘하는 리더·프로젝트 총괄·전문 자격 분야에서 크게 이름을 날릴 팔자일쎄. 남들이 못 푸는 난제를 해결할수록 명예와 연봉이 수직 상승하느니라.',
+        love: '겉으론 강해 보여도 연인 앞에서는 의지하고 싶은 마음이 크구먼. 자네의 어깨에 얹힌 짐을 조용히 덜어주는 따뜻하고 단단한 인연이 복을 부를 것이네.',
+        guess2026: '2026 병오년에 감당하기 벅찬 업무나 예상치 못한 압박감이 몰려와 “내가 왜 이걸 다 떠안고 있나” 속으로 크게 꺾였던 시기가 있었구먼. 체력과 멘탈을 쥐어짜며 버텨낸 흔적이 역력하네.'
+      },
+      '정관': {
+        weakness: '반듯하고 신뢰감 넘치는 모범생 기질이나, 남의 시선과 체면을 너무 의식해서 정작 내가 원하는 선택을 미루고 눈치만 보느라 에너지를 다 쓰는구먼.',
+        career: '체계가 잡힌 대기업·공공기관·전문 조직에서 차근차근 신뢰를 쌓아 높은 자리에 오를 명예운일쎄. 원칙을 지키되 가끔은 과감하게 내 공을 어필해야 손해를 안 보느니라.',
+        love: '예의 바르고 진중한 만남을 추구하는구먼. 상대방에게도 나만큼의 반듯함을 기대하다 실망할 수 있으니 작은 허점은 웃으며 넘겨주는 여유를 챙기게나.',
+        guess2026: '2026 병오년에 직책, 평가, 시험, 혹은 주변의 기대치 때문에 남몰래 어깨가 무거웠구먼. “실수하면 안 된다”는 강박으로 겉으론 완벽한 척 넘겼으나 속으론 꽤 지쳐 있었을 것이네.'
+      },
+      '편인': {
+        weakness: '직관력과 아이디어는 천재적이나, 생각이 꼬리에 꼬리를 물어 실행하기도 전에 스스로 김이 빠지거나 남 모르게 고독감에 빠지는 기복이 뚜렷하구먼.',
+        career: '남들과 똑같은 길보다 IT·전략·예술·심리·특수 전문 분야처럼 독창적인 시선이 돈이 되는 곳에서 대박 날 팔자일쎄. 머릿속 아이디어를 결과물로 꺼내기만 하면 승부가 나느니라.',
+        love: '영혼이 통하는 깊은 대화를 원하지만 상대가 조금만 선을 넘으면 순식간에 마음의 문을 닫아버리는구먼. 오해가 생기면 혼자 추측하지 말고 바로 물어보는 습관이 약일쎄.',
+        guess2026: '2026 병오년에 남들은 모르는 깊은 고민이나 진로 방황 때문에 혼자 있는 시간이 부쩍 늘었구먼. 번뜩이는 아이디어는 많았는데 주변과 결이 안 맞아 외롭거나 답답했던 순간이 있었을 것이네.'
+      },
+      '정인': {
+        weakness: '포용력과 학습 능력은 뛰어나나, 결정적인 순간에 남의 눈치를 보거나 안전한 길만 찾느라 실행이 한 박자 늦어지는 우유부단함이 약점이구먼.',
+        career: '자격증·학위·전문 지식을 무기 삼아 가르치거나 기획·컨설팅·연구하는 분야에서 윗사람의 인정을 듬뿍 받을 팔자일쎄. 귀인 복이 있어 막힐 때마다 돕는 손길이 나타나느니라.',
+        love: '배려심 깊고 따뜻한 연애를 하지만 상대를 너무 챙기다 정작 내 감정은 뒷전으로 밀어두기 쉽구먼. 사랑받는 것에도 당당해져야 건강한 인연이 이어지느니라.',
+        guess2026: '2026 병오년에 공부·자격·이직 준비나 새로운 기반을 다지느라 머릿속이 복잡했구먼. 주변의 조언을 듣다 보니 오히려 내 중심이 흔들려 결정을 미뤘던 일이 하나쯤 있을 것이네.'
       }
+    };
+
+    const DEFICIENT_BOTTLENECK_DB = {
+      0: {
+        bottleneck: '사주에 목(木) 기운이 말라, 머릿속 계획은 완벽한데 막상 첫 삽을 뜨는 실행력과 초반 추진력이 턱없이 부족해 기회를 놓치기 쉽구먼.',
+        prescription: '완벽한 준비는 없느니라! 아침 10분 산책이나 작은 새 프로젝트부터 일단 저질러 보게. 초록 식물 하나 책상에 두는 것만으로도 막힌 목(木) 기운이 트일 것이네.',
+        color: '올리브 · 에메랄드',
+        item: '책상 위 작은 화분 · 우드 펜'
+      },
+      1: {
+        bottleneck: '사주에 화(火) 기운이 약해, 실력은 충분한데도 남들 앞에 나서서 내 성과를 어필하는 열정과 존재감이 묻혀 손해 보는 일이 잦구먼.',
+        prescription: '겸손도 지나치면 손해일쎄! 내가 한 일은 당당히 드러내고, 햇볕 쬐기와 가벼운 유산소로 식은 화(火) 기운에 불씨를 지피게나.',
+        color: '주홍빛 (버밀리온)',
+        item: '따뜻한 무드 조명 · 레드 포인트 소품'
+      },
+      2: {
+        bottleneck: '사주에 토(土) 기운이 비어, 판은 잘 벌려놓고도 중심이 흔들려 마무리가 약해지거나 들어온 재물이 머물지 못하고 새기 쉬운 형국이구먼.',
+        prescription: '하루 루틴과 가계부부터 단단히 고정하게나! 불규칙한 생활을 끊고 흙의 기운을 담은 꾸준한 저축 습관을 들이면 재물 그릇이 커질 것이네.',
+        color: '황토빛 · 버터 크림',
+        item: '도자기 머그컵 · 가죽 지갑'
+      },
+      3: {
+        bottleneck: '사주에 금(金) 기운이 부족해, 거절을 못 하고 질질 끌려다니거나 우유부단하게 미루다가 정작 중요한 마감과 결단 타이밍을 놓치느니라.',
+        prescription: '아닌 인연과 불필요한 약속은 칼같이 쳐내게나! 매일 밤 내일 할 일 딱 3개만 정해 끝맺는 습관이 자네의 금(金) 기운을 날카롭게 세워줄 것이네.',
+        color: '머스터드 골드 · 백은',
+        item: '메탈 손목시계 · 체크리스트'
+      },
+      4: {
+        bottleneck: '사주에 수(水) 기운이 말라, 스트레스가 쌓이면 머리가 과열돼 유연한 대처를 못 하고 밤에 잡생각과 불면으로 기력을 소진하기 쉽구먼.',
+        prescription: '감정이 뜨거워질 땐 10분만 자리를 피해 찬물 한 잔 마시고 결정하게나. 물가 산책이나 조용한 독서 루틴이 막힌 수(水) 지혜를 뚫어줄 것이네.',
+        color: '아이스블루 · 깊은 남빛',
+        item: '차가운 물 텀블러 · 블루 톤 소품'
+      }
+    };
+
+    const SEWOON_2027_GOD_DB = {
+      '비견': { h1: '내 이름을 걸고 판을 주도하는 상반기일쎄', h1Desc: '丁화 비견이 들어와 주변 눈치 보던 태도를 벗고 내 주관이 또렷해지는 시기구먼. 경쟁자가 생기더라도 기죽지 말고 자네만의 색깔을 밀어붙이게나.', h2: '독립심과 실력을 증명하는 하반기구먼', h2Desc: '未토 비견 기운이 자리 잡으며 남에게 기대던 일을 스스로 해결해 내는 성취감이 클 것이네. 동업보다는 단독 플레이가 훨씬 유리하느니라.', career: '자네의 전문성과 독립적인 영역을 확실히 구축할 타이밍일쎄. 내 페이스대로 포트폴리오를 쌓게나.', careerTip: '상반기 안에 나만의 대표 강점 1가지를 명확히 정의해 두게.', money: '공동 투자나 지인 부탁으로 돈이 새기 쉬우니 내 지갑은 내가 지킨다는 원칙을 세우게나.', moneyTip: '지인 간 금전 거래와 보증은 무조건 거절하게.', love: '자존심 싸움만 줄이면 서로를 존중하는 건강한 관계로 발전할 해일쎄.', loveTip: '이기는 말보다 상대 마음을 편하게 하는 말을 고르게나.' },
+      '겁재': { h1: '강한 승부욕으로 판을 흔드는 상반기일쎄', h1Desc: '丁화 겁재가 불을 지피니 새로운 도전이나 경쟁에 뛰어들고 싶어질 것이네. 기세는 좋으나 과속만 주의하게나.', h2: '지출 단속과 사람 선별이 핵심인 하반기구먼', h2Desc: '未토 겁재가 들어오면 주변에 사람이 몰리면서도 은근한 경쟁과 금전 지출이 늘어나느니라. 진짜 내 편을 가려내야 할 것이네.', career: '치열한 경쟁을 뚫고 성과를 낚아채는 돌파력이 폭발하는 해일쎄. 팀워크 조율만 챙기게나.', careerTip: '큰 계약이나 이직 조건은 반드시 문서로 꼼꼼히 남기게.', money: '돈이 크게 들어왔다 빠져나가기 쉬운 해구먼. 충동 투자와 과시성 소비만 막아도 큰돈을 지키느니라.', moneyTip: '여윳돈은 즉시 출금 어려운 안전 자산으로 묶어두게.', love: '강렬한 끌림이 찾아오나 질투와 소유욕이 커질 수 있으니 적당한 거리를 유지하게나.', loveTip: '감정이 뜨거울 땐 하루만 지나고 연락하는 여유를 갖게.' },
+      '식신': { h1: '재능과 아이디어가 술술 풀리는 상반기일쎄', h1Desc: '丁화 식신이 들어오니 막혔던 표현력이 트이고 내가 좋아서 하는 일이 슬슬 반응이 오기 시작할 것이네.', h2: '여유와 실속이 통장에 쌓이는 하반기구먼', h2Desc: '未토 식신이 단단히 받쳐주며 일과 삶의 균형이 안정되고 의식주 복이 넉넉해질 것이네.', career: '내가 직접 기획하고 만들어내는 콘텐츠·기술·실무에서 호평이 쏟아질 해일쎄.', careerTip: '완벽주의를 버리고 매주 작은 결과물이라도 세상에 내놓게.', money: '일확천금보다 내 재능이 꾸준한 현금 흐름으로 바뀌는 알짜배기 재물운일쎄.', moneyTip: '먹고 노는 소소한 힐링 지출만 월 한도를 정해두게나.', love: '억지로 애쓰지 않아도 편안하고 따뜻한 기운이 흘러 자연스럽게 호감을 얻는 해구먼.', loveTip: '취미나 맛집 탐방처럼 즐거운 자리에서 좋은 인연이 스며드느니라.' },
+      '상관': { h1: '판을 뒤집고 존재감을 터뜨리는 상반기일쎄', h1Desc: '丁화 상관이 발동하니 답답한 틀을 깨고 이직·독립·새 도전을 향한 욕구가 활활 타오를 것이네.', h2: '실력을 인정받되 말조심이 생명인 하반기구먼', h2Desc: '未토 상관이 무르익으며 실력만큼은 확실히 인정받겠으나 윗사람이나 규정과 부딪힐 여지가 크느니라.', career: '틀을 깨는 기획력이나 문제 해결 능력으로 판을 바꿀 절호의 기회구먼. 다음 발판 확보 후 움직이게나.', careerTip: '회의나 메신저에서 즉각 반박 대신 3초 숨 고르고 말하게.', money: '아이디어와 말빨이 곧 돈이 되는 해일쎄. 부업이나 프리랜서, 인센티브 수익을 노려볼 만하구먼.', moneyTip: '기분 전환용 충동 쇼핑만 끊어도 연말 통장이 두둑할 것이네.', love: '매력 지수가 치솟아 다가오는 사람은 많으나 까다로운 눈높이 탓에 금세 질릴 수 있네.', loveTip: '상대의 단점 하나보다 장점을 세 번 떠올려 보게.' },
+      '편재': { h1: '돈과 기회의 판이 넓어지는 상반기일쎄', h1Desc: '丁화 편재가 비추니 본업 밖에서도 새로운 수익원이나 흥미로운 제안이 눈에 띄게 늘어나겠구먼.', h2: '벌려둔 판에서 알짜 실속을 거두는 하반기구먼', h2Desc: '未토 편재가 현실적인 결과물로 굳어지는 시기일쎄. 돈이 되는 핵심 2가지로 압축해야 크게 웃을 것이네.', career: '영업, 사업 확장, 외부 협업, 네트워킹에서 굵직한 성과가 터질 해일쎄.', careerTip: '상반기에 만난 인맥 중 실속 있는 귀인 3명은 꾸준히 챙기게.', money: '재물 회전이 빨라지고 뜻밖의 보너스나 부수입 운이 열리느니라. 무리한 레버리지만 피하게나.', moneyTip: '수입의 30%는 건드리지 않는 비상금 통장으로 빼두게.', love: '활기찬 모임이나 외부 활동에서 센스 있는 인연을 만날 확률이 높구먼.', loveTip: '바쁘다는 핑계로 소중한 사람에게 소홀해지지 않게 주의하게나.' },
+      '정재': { h1: '안정적인 기반과 실속을 다지는 상반기일쎄', h1Desc: '丁화 정재가 들어오니 허황된 꿈은 접고 눈에 보이는 성과와 통장 숫자에 집중하게 되는 알찬 시기구먼.', h2: '차곡차곡 쌓은 노력이 자산이 되는 하반기구먼', h2Desc: '未토 정재가 단단히 뿌리내리며 연봉 협상, 저축 목표 달성, 계약 성사 등 결실이 뚜렷하게 맺힐 것이네.', career: '화려한 한 방보다 꼼꼼한 일 처리와 신뢰도로 승진이나 핵심 포지션을 꿰찰 해일쎄.', careerTip: '성과를 숫자와 데이터로 정리해 두면 연봉 협상에서 크게 유리할쎄.', money: '새는 구멍이 막히고 정직한 노동과 계획적인 자산 관리로 목돈이 모이는 복된 해일쎄.', moneyTip: '자동이체 적금·장기 우량 자산 위주로 안정적인 구조를 짜게나.', love: '가벼운 만남보다 미래를 함께 그려볼 수 있는 진중하고 성실한 인연운이 강하구먼.', loveTip: '현실적인 조건만 따지다 따뜻한 마음을 놓치지 않게 조심하게.' },
+      '편관': { h1: '묵직한 과제와 함께 급성장하는 상반기일쎄', h1Desc: '丁화 편관이 치고 들어오니 예상치 못한 중책이나 까다로운 과제가 떨어질 수 있구먼. 넘기면 격이 올라갈 것이네.', h2: '압박을 뚫고 명예와 실력을 거머쥐는 하반기구먼', h2Desc: '未토 편관이 단단한 훈장으로 바뀌는 흐름일쎄. 체력 관리만 무너지지 않으면 부러워할 자리를 쥘 것이네.', career: '승진, 이직, 중대한 프로젝트 리드 등 명예와 책임이 동시에 커지는 해일쎄.', careerTip: '혼자 다 떠안지 말고 업무 우선순위와 마감 기한을 분명히 조율하게.', money: '일한 만큼 대가가 따르나 스트레스성 지출이나 건강 관리 비용을 미리 챙기게나.', moneyTip: '체력이 곧 돈이니 수면과 운동 루틴을 절대 무너뜨리지 말게.', love: '일과 압박감 때문에 연애가 뒷전으로 밀리기 쉽구먼. 힘들 땐 솔직히 기대게나.', loveTip: '연인이나 가족에게 “고맙다, 힘들다” 한마디를 아끼지 말게.' },
+      '정관': { h1: '신뢰와 명예가 빛을 발하는 상반기일쎄', h1Desc: '丁화 정관이 바르게 비추니 묵묵히 쌓아온 평판이 빛을 보며 합격·승진·좋은 자리 제안이 들어올 운세구먼.', h2: '안정된 궤도 위에서 인정을 굳히는 하반기구먼', h2Desc: '未토 정관이 질서를 잡아주며 흔들리던 생활과 커리어가 반듯한 틀 안에 안착할 것이네.', career: '취업, 이직, 승진, 자격 취득 등 공식적인 타이틀을 얻기에 더없이 좋은 해일쎄.', careerTip: '면접·보고·제안서 등 공식 자리에서 단정하고 명확한 태도를 유지하게.', money: '안정적인 급여 상승과 고정 수입이 탄탄해지는 흐름일쎄. 정석적인 재테크가 복을 부르느니라.', moneyTip: '세금·보험·고정비 점검만 해도 생각보다 큰돈이 굳을 것이네.', love: '소개팅이나 신뢰할 만한 지인의 연결로 반듯하고 예의 바른 인연이 들어오는 해구먼.', loveTip: '너무 완벽하게 보이려 애쓰지 말고 솔직한 매력을 보여주게나.' },
+      '편인': { h1: '번뜩이는 영감과 방향 전환의 상반기일쎄', h1Desc: '丁화 편인이 내면을 깨우니 “이대로는 안 되겠다”는 직감이 들며 새로운 기술·공부·기획에 눈을 뜨는 전환점이 올 것이네.', h2: '독창적인 전문성으로 판을 읽는 하반기구먼', h2Desc: '未토 편인이 깊은 통찰력으로 무르익으며 남들이 못 보는 틈새를 발견할 것이네.', career: 'AI·데이터·기획·콘텐츠·특수 전문 역량을 새로 장착하면 커리어 판도가 뒤집힐 해일쎄.', careerTip: '머릿속 아이디어는 24시간 안에 메모하고 작은 시제품으로 실행하게.', money: '전통적인 방식보다 지식·정보·특수 기술을 활용한 수익 모델에서 빛이 날 것이네.', moneyTip: '검증 안 된 정보에 휩쓸리지 않도록 팩트 체크를 생활화하게.', love: '겉치레보다 정신적 교감이 깊은 인연에 끌리는 해일쎄. 혼자만의 시간도 존중해 주는 상대가 맞느니라.', loveTip: '상대 말을 혼자 확대 해석하지 말고 궁금하면 담백하게 물어보게.' },
+      '정인': { h1: '귀인의 도움과 배움이 열리는 상반기일쎄', h1Desc: '丁화 정인이 따뜻하게 감싸주니 막혔던 일에 의외의 조력자가 나타나고 문서·계약·학업 운이 순풍을 탈 것이네.', h2: '탄탄한 내공과 문서 복을 쥐는 하반기구먼', h2Desc: '未토 정인이 든든한 울타리가 되어주며 마음의 안정과 함께 부동산·계약·합격 같은 문서운이 따라줄 것이네.', career: '윗사람이나 멘토의 추천으로 좋은 기회를 잡거나 자격증·학위로 몸값을 높이기 딱 좋은 해일쎄.', careerTip: '고민이 생기면 혼자 앓지 말고 경험 많은 선배나 전문가에게 먼저 묻게.', money: '무리한 투자보다 부동산·청약·계약·장기 자산 공부에서 알짜 정보를 건질 운세구먼.', moneyTip: '계약서 도장 찍기 전 특약 사항만 한 번 더 꼼꼼히 살피게나.', love: '나를 진심으로 아껴주고 정서적으로 안정감을 주는 포근한 인연이 곁에 머무는 해일쎄.', loveTip: '받기만 하지 말고 자네도 따뜻한 말과 작은 선물로 마음을 표현하게.' }
+    };
+
+    function applySpiceText(spice, mild, medium, nuclear) {
+      if (spice === 'mild') return mild;
+      if (spice === 'nuclear') return nuclear;
+      return medium;
     }
 
-    function buildSajuContextPrompt(state) {
-      const { displayName, gender, saju } = state;
-      const pText = saju.pillars.slice().reverse().map((p) =>
-        p.unknown ? `${p.title}:미상` : `${p.title}:${p.stem.hanja}${p.branch.hanja}(${p.stemGod.name}/${p.branchGod.name})`
-      ).join(', ');
-      const elText = ELEMENTS.map((e, i) => `${e.ko}${saju.elCounts[i]}`).join(' ');
-      const missText = saju.missingElements.map((e) => e.ko).join(',') || '없음';
-      const exText = saju.excessElements.map((e) => e.ko).join(',') || '없음';
-      const godText = Object.entries(saju.godCounts).map(([k, v]) => `${k}${v}`).join(', ');
-      const interText = saju.sewoon2027.interactions.join(' / ');
-      const arch = ILGAN_ARCHETYPES[saju.dayStem];
-      return `호칭:${displayName} / 성별:${gender === 'female' ? '여성(곤명)' : '남성(건명)'} / 일간물상:${arch.shortTitle}(${arch.hanjaLabel} - ${arch.desc}) / 원국:[${pText}] / 일주:${saju.iljuHanja}(${saju.iljuKo}) / 월지:${saju.monthBranchLabel} / 강약경향:${saju.strengthHint} / 오행:[${elText}] (과다:${exText}, 결핍:${missText}, 최우선 보완오행:${saju.deficientElement.ko}(${saju.deficientElement.hanja})) / 십성:[${godText}] (대표:${saju.dominantGod}) / 2026 병오년(丙午) 세운:[천간 丙=${saju.sewoon2026.stemGod.name}, 지지 午=${saju.sewoon2026.branchGod.name}] / 2027 정미년(丁未) 세운:[천간 丁=${saju.sewoon2027.stemGod.name}, 지지 未=${saju.sewoon2027.branchGod.name}, 지지작용:${interText}]`;
-    }
-
-    async function requestMainRoast(state) {
-      const spice = SPICE_META[state.spice];
-      const defEl = state.saju.deficientElement;
-      const amulet = COMPENSATING_AMULETS[defEl.id];
-      const arch = ILGAN_ARCHETYPES[state.saju.dayStem];
-      const sw26 = state.saju.sewoon2026;
-      const sysPrompt = `너는 소름 돋게 용하고 입담이 송곳처럼 날카로운 한국의 역술 도사 '젬선생(占先生)'이네.
-말투 절대 규칙:
-1. 사용자를 반드시 "${state.displayName}" 또는 "자네"라고 부르게.
-2. 모든 문장에 자연스럽게 도사님 어투("허허,", "~그럴쎄", "~할 것이네", "~하느니라", "~명심하게나", "~보이는구먼")를 녹여내게.
-3. 수위 지침: ${spice.promptGuide}
-
-[핵심 규칙 - 군더더기 빼고 소름 돋게 압축]
-- 금지: "화가 많으니 열정적이다", "정관이 있으니 성실하다" 같은 1차원적 뻔한 소리 절대 금지!
-- 필수 1 (겉캐 vs 속캐): '${arch.shortTitle}' 물상을 녹여서, 친구들한테 캡처해서 보내고 싶을 만큼 웃기고 찔리는 1줄 겉캐 vs 1줄 속캐를 뽑아주게.
-- 필수 2 (2026 올해 병오년 찍어 맞추기): 2026년 병오년(${sw26.stemGod.name}/${sw26.branchGod.name}) 기운을 근거로, "허허, 자네 올해(2026년) 여름쯤 ~하느라 속으로 크게 한 번 꺾였구먼?" 식으로 사용자가 "와 진짜 용하다!" 소름 돋을 만한 2~3문장 되짚기를 써주게.
-- 필수 3 (압축 팩폭): 장황한 설명 없이 일간×월지, 십성 조합 역학, 결핍 오행(${defEl.ko}) 병목을 딱 3개 불릿(각 1~2문장)으로 송곳처럼 찌르게.`;
-
-      const userPrompt = `[내담자 명식]\n${buildSajuContextPrompt(state)}\n[처방될 맞춤 부적]: ${amulet.name} (${defEl.ko} 기운 보완)\n\n위 데이터를 근거로 JSON 스키마에 맞춰 짧고 강렬하며 소름 돋는 사주 팩폭을 작성하게.`;
-
-      const payload = {
-        contents: [{ parts: [{ text: userPrompt }] }],
-        systemInstruction: { parts: [{ text: sysPrompt }] },
-        generationConfig: {
-          responseMimeType: "application/json",
-          responseSchema: {
-            type: "OBJECT",
-            properties: {
-              oneLiner: { type: "STRING", description: "42자 이내 도사님 한 줄 천기누설 (~그럴쎄/~구먼)" },
-              keywords: { type: "ARRAY", items: { type: "STRING" }, description: "핵심 키워드 태그 3개 (# 제외)" },
-              outerPersona: { type: "STRING", description: "남들이 보는 겉모습 1줄 (공감·웃음 유발)" },
-              innerPersona: { type: "STRING", description: "아무도 모르는 실제 속마음 1줄 (뼈 때리는 반전)" },
-              guess2026: { type: "STRING", description: "2026년 병오년(올해)에 겪었을 심리·일·관계 변화를 콕 찍어 맞추는 소름 돋는 2~3문장" },
-              amuletQuote: { type: "STRING", description: `부적에 새길 42자 이내 맞춤 처방 문구 (${defEl.ko} 보완 & ${amulet.shortName} 효험)` },
-              coreBullets: { type: "ARRAY", items: { type: "STRING" }, description: "① 일간×월지 본캐, ② 십성 조합의 치명적 약점, ③ 결핍 오행 병목 — 딱 3개 불릿" },
-              careerOne: { type: "STRING", description: "재물·커리어 정밀 팩폭 2문장" },
-              loveOne: { type: "STRING", description: "연애·인간관계 정밀 팩폭 2문장" },
-              prescription: { type: "STRING", description: "부족 오행 채우는 현실 개운 처방 2문장" },
-              luckyColor: { type: "STRING", description: "개운 빛깔" },
-              luckyItem: { type: "STRING", description: "개운 물건" }
-            },
-            required: [
-              "oneLiner", "keywords", "outerPersona", "innerPersona",
-              "guess2026", "amuletQuote", "coreBullets",
-              "careerOne", "loveOne", "prescription", "luckyColor", "luckyItem"
-            ]
-          }
-        }
-      };
-
-      const res = await fetchGeminiWithBackoff(payload);
-      const txt = res?.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (!txt) throw new Error('Empty response');
-      return JSON.parse(txt);
-    }
-
-    async function request2027Fortune(state) {
-      const spice = SPICE_META[state.spice];
-      const sw = state.saju.sewoon2027;
-      const sysPrompt = `너는 신비로운 팩폭 도사 '젬선생(占先生)'이네. 이번엔 ${state.displayName}의 2027년 정미년(丁未年) 신년운세를 정밀하게 짚어줄 차례일쎄.
-말투 절대 규칙: 반드시 "허허,", "~그럴쎄", "~할 것이네", "~명심하게나", "~보이는구먼", "어허!" 같은 도사님 어투를 쓰게.
-수위 지침: ${spice.promptGuide}
-[2027 정미년 정밀 분석 규칙]
-- 뻔한 덕담 금지! 2027년 천간 丁(정밀한 촛불·화)=[${sw.stemGod.name}], 지지 未(뜨거운 여름 흙·토)=[${sw.branchGod.name}], 그리고 원국 지지와의 작용(${sw.interactions.join(', ')})을 반드시 근거로 삼아 구체적인 행동 시나리오를 그려주게.`;
-
-      const userPrompt = `[내담자 사주 & 2027 세운]\n${buildSajuContextPrompt(state)}\n\nJSON 스키마에 맞춰 2027 정미년 운세를 작성하게. 점수는 55~96 사이 현실적인 숫자로 매기게.`;
-
-      const payload = {
-        contents: [{ parts: [{ text: userPrompt }] }],
-        systemInstruction: { parts: [{ text: sysPrompt }] },
-        generationConfig: {
-          responseMimeType: "application/json",
-          responseSchema: {
-            type: "OBJECT",
-            properties: {
-              talisman2027Title: { type: "STRING", description: "2027년 부적용 6~10자 칭호" },
-              oneLiner: { type: "STRING", description: "2027년 도사님 한 줄 총평 (45자 이내)" },
-              keywords: { type: "ARRAY", items: { type: "STRING" }, description: "2027 핵심 키워드 3개 (# 제외)" },
-              scores: {
-                type: "OBJECT",
-                properties: {
-                  total: { type: "INTEGER" },
-                  money: { type: "INTEGER" },
-                  career: { type: "INTEGER" },
-                  love: { type: "INTEGER" }
-                },
-                required: ["total", "money", "career", "love"]
-              },
-              firstHalfTitle: { type: "STRING", description: "상반기 1줄 제목" },
-              firstHalfDesc: { type: "STRING", description: "상반기 흐름 2문장 (도사 어투)" },
-              secondHalfTitle: { type: "STRING", description: "하반기 1줄 제목" },
-              secondHalfDesc: { type: "STRING", description: "하반기 흐름 2문장 (도사 어투)" },
-              bestMonth: { type: "STRING", description: "대박의 달 (예: 9월)" },
-              bestMonthReason: { type: "STRING", description: "대박의 달 이유 1~2문장" },
-              cautionMonth: { type: "STRING", description: "조심할 달 (예: 6월)" },
-              cautionMonthReason: { type: "STRING", description: "조심할 달 이유 1~2문장" },
-              categories: {
-                type: "OBJECT",
-                properties: {
-                  career: { type: "OBJECT", properties: { text: { type: "STRING" }, tip: { type: "STRING" } }, required: ["text", "tip"] },
-                  money:  { type: "OBJECT", properties: { text: { type: "STRING" }, tip: { type: "STRING" } }, required: ["text", "tip"] },
-                  love:   { type: "OBJECT", properties: { text: { type: "STRING" }, tip: { type: "STRING" } }, required: ["text", "tip"] }
-                },
-                required: ["career", "money", "love"]
-              },
-              warning: { type: "STRING", description: "2027년 팩폭 경고장 2문장 (어허, ...)" },
-              actionTip: { type: "STRING", description: "2027년 필수 개운 행동 1~2문장" }
-            },
-            required: [
-              "talisman2027Title", "oneLiner", "keywords", "scores",
-              "firstHalfTitle", "firstHalfDesc", "secondHalfTitle", "secondHalfDesc",
-              "bestMonth", "bestMonthReason", "cautionMonth", "cautionMonthReason",
-              "categories", "warning", "actionTip"
-            ]
-          }
-        }
-      };
-
-      const res = await fetchGeminiWithBackoff(payload);
-      const txt = res?.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (!txt) throw new Error('Empty response');
-      return JSON.parse(txt);
-    }
-
-    /* Graceful Sage Fallbacks */
-    function buildFallbackRoast(state) {
+    function generateLocalRoast(state) {
       const s = state.saju;
-      const defEl = s.deficientElement;
-      const amulet = COMPENSATING_AMULETS[defEl.id];
       const arch = ILGAN_ARCHETYPES[s.dayStem];
+      const persona = ARCHETYPE_PERSONA_DB[s.dayStem];
+      const godInfo = TENGOD_ANALYSIS_DB[s.dominantGod] || TENGOD_ANALYSIS_DB['비견'];
       const sw26 = s.sewoon2026;
+      const sw26Info = TENGOD_ANALYSIS_DB[sw26.stemGod.name] || godInfo;
+      const defEl = s.deficientElement;
+      const defInfo = DEFICIENT_BOTTLENECK_DB[defEl.id];
+      const amulet = COMPENSATING_AMULETS[defEl.id];
+
+      const oneLiner = applySpiceText(
+        state.spice,
+        `허허, ${state.displayName}! 따뜻한 ${arch.shortTitle} 기운에 ${s.dominantGod}의 뚝심을 품었으나 혼자 너무 애쓰고 있구먼.`,
+        `허허, ${state.displayName}! 겉은 점잖은 ${arch.shortTitle}이나 속으론 ${s.dominantGod} 계산기만 밤새 두드리는 팔자일쎄!`,
+        `어허, ${state.displayName}! 타고난 ${arch.shortTitle} 판은 기가 막힌데, ${defEl.ko}(${defEl.hanja}) 부족 탓에 스스로 발목 잡고 있는 꼴이구먼!`
+      );
+
       return {
-        oneLiner: `허허, ${state.displayName}! 겉은 점잖은 ${arch.shortTitle}이나 속으론 ${s.dominantGod} 계산기만 밤새 두드리는 팔자일쎄!`,
-        keywords: [`${arch.shortTitle.replace(/\s+/g, '')}`, `${s.dominantGod}역학`, `${defEl.ko}기운보완`],
-        outerPersona: `무던하고 자기 관리 잘하는 쿨한 ${arch.shortTitle}처럼 보이느니라.`,
-        innerPersona: `카톡 답장 10분 늦어도 혼자 시나리오 5개 돌리고 밤에 이불 차는 유리멘탈일쎄.`,
-        guess2026: `허허, 자네 올해(2026 병오년)에 ${sw26.stemGod.name} 기운이 강하게 치고 들어오면서 여름 전후로 일이나 사람 문제 때문에 속으로 크게 한 번 흔들렸구먼? 겉으론 괜찮은 척 넘겼으나 밤마다 '이 길이 맞나' 고민하느라 기력을 꽤 썼을 것이네.`,
+        oneLiner,
+        keywords: [arch.shortTitle.replace(/\s+/g, ''), `${s.dominantGod}역학`, `${defEl.ko}기운보완`],
+        outerPersona: persona.outer,
+        innerPersona: persona.inner,
+        guess2026: `허허, 자네 올해(2026 병오년)에 천간 ${sw26.stemGod.name}·지지 ${sw26.branchGod.name} 기운이 강하게 들어왔구먼! ${sw26Info.guess2026}`,
         amuletQuote: `허허, 자네 사주에 ${defEl.ko}(${defEl.hanja})가 비었으니 이 ${amulet.shortName}로 ${amulet.traitWord}을 채우게나!`,
         coreBullets: [
-          `[본캐 해부] ${s.iljuKo}(${s.iljuHanja}) 일간과 ${s.monthBranchLabel} 월지가 맞물린 ${s.strengthHint} 기질이라, 남들 눈엔 여유로워도 머릿속 시뮬레이션은 이미 100번도 더 돌렸을 것이네.`,
-          `[십성 역학] ${s.dominantGod} 기운이 강해 디테일과 눈썰미는 기가 막히나, 기준이 까다로워 남을 못 믿고 혼자 떠안다 방전되는 패턴이 보이는구먼.`,
-          `[막히는 이유] 사주에 ${defEl.ko}(${defEl.hanja}) 기운이 말라 판은 잘 짜놓고도 막판 마무리가 흐지부지되거나 경계선이 무너져 기력을 뺏기느니라.`
+          `[본캐 해부] ${s.iljuKo}(${s.iljuHanja}) 일간과 ${s.monthBranchLabel} 월지가 맞물린 ${s.strengthHint} 명식일쎄.`,
+          `[십성 역학] 원국에 ${s.dominantGod} 기운이 두드러져 ${godInfo.weakness}`,
+          `[막히는 이유] ${defInfo.bottleneck}`
         ],
-        careerOne: `남이 짠 판에서 단순 반복만 하면 영혼이 마르는 팔자일쎄. 자네의 판단권이 인정받는 주특기 하나를 파고, 스트레스성 소액 결제만 끊어도 몸값과 통장이 같이 뛸 것이네.`,
-        loveOne: `눈높이는 까다로운데 막상 정을 주면 혼자 다 떠안고 서운해하는 인연운일쎄. 자네의 예민함을 담백하게 받아줄 어른스러운 인연과 궁합이 좋느니라.`,
-        prescription: `허허, 비어 있는 ${defEl.ko}(${defEl.hanja}) 기운을 일상 루틴으로 채워야 운의 물꼬가 트일 것이네. 완벽주의 대신 '일단 끝맺는 습관'부터 들이게나.`,
-        luckyColor: defEl.id === 0 ? '청록빛' : defEl.id === 1 ? '주홍빛' : defEl.id === 2 ? '황토빛' : defEl.id === 3 ? '백은빛' : '남빛',
-        luckyItem: defEl.id === 0 ? '책상 위 작은 식물' : defEl.id === 1 ? '따뜻한 무드 조명' : defEl.id === 2 ? '도자기 머그컵' : defEl.id === 3 ? '메탈 시계' : '차가운 물 텀블러'
+        careerOne: godInfo.career,
+        loveOne: godInfo.love,
+        prescription: defInfo.prescription,
+        luckyColor: defInfo.color,
+        luckyItem: defInfo.item
       };
     }
 
-    function buildFallback2027(state) {
-      const sw = state.saju.sewoon2027;
+    function generateLocal2027(state) {
+      const s = state.saju;
+      const sw = s.sewoon2027;
+      const stemInfo = SEWOON_2027_GOD_DB[sw.stemGod.name] || SEWOON_2027_GOD_DB['정관'];
+      const branchInfo = SEWOON_2027_GOD_DB[sw.branchGod.name] || SEWOON_2027_GOD_DB['식신'];
+      const interJoined = sw.interactions.join(' ');
+
+      const seed = (s.dayStem * 13 + s.dayBranch * 7 + s.monthBranch * 5) % 15;
+      const hasHarm = interJoined.includes('충') || interJoined.includes('형') || interJoined.includes('원진');
+      const hasHarmony = interJoined.includes('합');
+      const bonus = (hasHarmony ? 7 : 0) - (hasHarm ? 4 : 0);
+
+      const careerScore = Math.min(96, Math.max(64, 78 + (seed % 11) + bonus));
+      const moneyScore  = Math.min(95, Math.max(62, 74 + ((seed * 3) % 13) + (sw.branchGod.category === 'jaeseong' || sw.branchGod.category === 'siksang' ? 8 : 0)));
+      const loveScore   = Math.min(94, Math.max(60, 72 + ((seed * 5) % 14) + (hasHarmony ? 6 : 0)));
+      const totalScore  = Math.round(careerScore * 0.4 + moneyScore * 0.35 + loveScore * 0.25);
+
+      const bestMonths = ['9월', '10월', '4월', '11월', '3월', '8월'];
+      const cautionMonths = ['6월', '7월', '12월', '1월', '5월'];
+      const bestMonth = bestMonths[(s.dayStem + s.monthBranch) % bestMonths.length];
+      const cautionMonth = cautionMonths[(s.dayBranch + s.deficientElement.id) % cautionMonths.length];
+
+      const warning = hasHarm
+        ? `어허, 2027년은 자네 원국에 [${sw.interactions[0]}] 기운이 스치는 해일쎄! ${cautionMonth} 전후로 감정이 달아올라 말실수하거나 홧김에 판을 엎는 것만은 절대 금물이니라.`
+        : applySpiceText(
+            state.spice,
+            `허허, 2027년은 좋은 기운이 들어오나 남들 속도에 쫓겨 무리하면 체력이 먼저 꺾일 수 있으니 페이스 조절을 명심하게나.`,
+            `어허, 2027년은 ${sw.stemGod.name} 운이 열리는데도 옛날 습관대로 미루고 눈치만 보다간 다 된 밥을 남에게 뺏길 것이네!`,
+            `어허, 정신 바짝 차리게! 2027 정미년에 ${s.deficientElement.ko}(${s.deficientElement.hanja}) 기운 보완 없이 고집만 부리면 좋은 기회를 코앞에서 날려 먹을 것이네!`
+          );
+
       return {
         talisman2027Title: `2027 ${sw.stemGod.name} 대운`,
-        oneLiner: `허허, 2027 정미년엔 ${sw.stemGod.name}과 ${sw.branchGod.name}이 맞물려 판이 바뀔 것이네!`,
-        keywords: [`천간${sw.stemGod.name}`, `지지${sw.branchGod.name}`, '기회포착'],
-        scores: { total: 83, money: 79, career: 87, love: 75 },
-        firstHalfTitle: `${sw.stemGod.name}의 불빛으로 판이 열리는 상반기일쎄`,
-        firstHalfDesc: `정미년의 丁(화) 기운이 ${sw.stemGod.name}으로 들어오니 주변에서 자네를 찾는 소리가 커질 것이네. 초반엔 분주하겠으나 이때 잡은 줄이 하반기의 복으로 이어지느니라.`,
-        secondHalfTitle: `${sw.branchGod.name}의 땅에 실속을 심는 하반기구먼`,
-        secondHalfDesc: `하반기로 갈수록 未(토)의 ${sw.branchGod.name} 기운이 단단해지며 손에 쥐는 결과가 드러날 것이네. 벌려둔 일을 정리하고 내실을 챙기게나.`,
-        bestMonth: '9월',
-        bestMonthReason: '막혔던 기운이 트이며 일과 재물 양쪽에서 희소식이 들려올 달일쎄.',
-        cautionMonth: '6월',
-        cautionMonthReason: '화(火) 기운이 과열되니 말실수와 성급한 결정을 각별히 조심하게나.',
+        oneLiner: `허허, 2027 정미년엔 ${sw.stemGod.name}의 불빛과 ${sw.branchGod.name}의 결실이 맞물려 판이 바뀔 것이네!`,
+        keywords: [`천간${sw.stemGod.name}`, `지지${sw.branchGod.name}`, `${bestMonth}대박`],
+        scores: { total: totalScore, money: moneyScore, career: careerScore, love: loveScore },
+        firstHalfTitle: stemInfo.h1,
+        firstHalfDesc: stemInfo.h1Desc,
+        secondHalfTitle: branchInfo.h2,
+        secondHalfDesc: branchInfo.h2Desc,
+        bestMonth,
+        bestMonthReason: `자네에게 필요한 오행의 숨통이 트이며 일과 재물에서 희소식이 들려올 황금 달일쎄.`,
+        cautionMonth,
+        cautionMonthReason: `정미년의 화토(火土) 열기가 과열되는 시기니 성급한 계약·말실수·충동 지출을 조심하게나.`,
         categories: {
-          career: { text: `허허, ${sw.stemGod.name} 운이 들어와 새로운 자리나 역할 제안이 올 상이구먼. 겸손 떨다 기회 놓치지 말고 과감히 깃발을 꽂게나.`, tip: '상반기 안에 자네의 성과를 한눈에 보이게 정리해 두게.' },
-          money: { text: `큰 한 방을 노리다간 탈이 나고, 꾸준한 흐름과 지출 단속이 돈을 부르는 해일쎄. 여름철 충동 투자만 피하면 연말에 웃을 것이네.`, tip: '수입이 들어오면 저축 통장부터 먼저 떼어놓게나.' },
-          love: { text: `목적이 같은 모임이나 일터에서 좋은 인연이 스며드는 형국이네. 곁에 있는 사람에겐 자존심 세우지 말고 먼저 말을 건네게나.`, tip: '서운한 일은 묵히지 말고 그날 밤 전에 담백하게 풀게.' }
+          career: { text: stemInfo.career, tip: stemInfo.careerTip },
+          money:  { text: branchInfo.money,  tip: branchInfo.moneyTip },
+          love:   { text: stemInfo.love,   tip: stemInfo.loveTip }
         },
-        warning: '어허, 2027년엔 남들 속도에 쫓겨 조급하게 판을 키우면 다 된 밥에 재를 뿌릴 것이네! 자네 페이스를 잃고 무리하는 것만은 절대 금물이니라.',
-        actionTip: '매달 초 이번 달 반드시 해낼 1가지만 종이에 적고, 나머지 잡념은 과감히 덜어내게나.'
+        warning,
+        actionTip: `매달 초 이번 달 끝맺을 1가지만 종이에 적고, 부족한 ${s.deficientElement.ko}(${s.deficientElement.hanja}) 루틴을 실천하게나.`
       };
+    }
+
+    function generateLocalChatReply(question, state) {
+      const q = question.toLowerCase();
+      const s = state.saju;
+      const sw = s.sewoon2027;
+      const defEl = s.deficientElement;
+      const defInfo = DEFICIENT_BOTTLENECK_DB[defEl.id];
+      const ally = ILGAN_ARCHETYPES[s.allyStemIdx];
+      const f27 = state.fortune2027;
+
+      if (q.includes('이직') || q.includes('취업') || q.includes('직장') || q.includes('일') || q.includes('커리어') || q.includes('사업')) {
+        return `허허, ${state.displayName}! 2027 정미년엔 천간 ${sw.stemGod.name} 기운이 열리니 커리어 판을 흔들기 나쁘지 않은 해구먼. 특히 ${f27.bestMonth} 전후로 움직이면 유리하고, ${f27.cautionMonth}엔 감정적인 퇴사만 피하게나!`;
+      }
+      if (q.includes('귀인') || q.includes('사람') || q.includes('친구')) {
+        return `허허, 자네 사주의 막힌 숨통을 뚫어줄 2027년 최고 귀인은 바로 [${ally.emoji} ${ally.shortTitle}] 같은 기운을 품은 사람일쎄! 평소 자네와 결이 조금 달라도 중심을 잡아주는 인연을 귀하게 여기게나.`;
+      }
+      if (q.includes('돈') || q.includes('재물') || q.includes('투자') || q.includes('금전')) {
+        return `허허, 2027년 자네 재물운은 ${f27.scores.money}점으로 지지 ${sw.branchGod.name} 기운이 실속을 쥐여주는 형국이구먼! ${f27.cautionMonth}의 충동 지출과 지인 추천 투자만 끊어도 연말 통장이 묵직해질 것이네.`;
+      }
+      if (q.includes('연애') || q.includes('결혼') || q.includes('사랑') || q.includes('썸')) {
+        return `허허, 자네는 ${ILGAN_ARCHETYPES[s.dayStem].shortTitle} 기질이라 겉으론 쿨해 보여도 속으론 정을 깊게 주는 편이구먼! 2027년엔 ${sw.stemGod.name} 기운으로 취향이 통하는 자리에서 좋은 인연이 스며들 것이네.`;
+      }
+      if (q.includes('부족') || q.includes('개운') || q.includes('부적') || q.includes('루틴') || q.includes('오행') || q.includes('일상')) {
+        return `허허, 자네 사주에서 가장 먼저 채워야 할 기운은 [${defEl.ko}(${defEl.hanja})]일쎄! ${defInfo.prescription} 위 맞춤 부적을 폰 배경에 두고 '${defInfo.color}' 소품을 가까이 두게나.`;
+      }
+      return `허허, ${state.displayName}! 자네의 ${s.iljuKo}(${s.iljuHanja}) 일주와 2027 정미년(${sw.stemGod.name}·${sw.branchGod.name}) 기운을 보니 ${f27.bestMonth} 승부처에 집중하면 분명 좋은 소식이 올 것이네. 더 깊은 1:1 상담은 위 [무료 젬선생 업그레이드]를 이용해 보게나!`;
     }
 
     /*************************************************************************
      * 5. UI RENDERERS & RITUAL LOADING CONTROLLER
      *************************************************************************/
-    let ritualTimer = null;
-
-    function showRitualOverlay() {
-      const overlay = document.getElementById('ritual-overlay');
-      const msgEl = document.getElementById('ritual-msg');
-      let idx = 0;
-      msgEl.textContent = RITUAL_MESSAGES[0];
-      overlay.classList.remove('hidden');
-      clearInterval(ritualTimer);
-      ritualTimer = setInterval(() => {
-        idx = (idx + 1) % RITUAL_MESSAGES.length;
-        msgEl.textContent = RITUAL_MESSAGES[idx];
-      }, 1700);
-    }
-
-    function hideRitualOverlay() {
-      clearInterval(ritualTimer);
-      document.getElementById('ritual-overlay').classList.add('hidden');
-    }
-
     function showToast(msg, type = 'info') {
       const container = document.getElementById('toast-container');
       const el = document.createElement('div');
@@ -1932,9 +1902,6 @@
     }
 
     function renderRoastUI(reading) {
-      document.getElementById('roast-loading').classList.add('hidden');
-      document.getElementById('roast-content').classList.remove('hidden');
-
       document.getElementById('ai-oneliner').textContent = `“${reading.oneLiner}”`;
       document.getElementById('ai-roast-keywords').innerHTML = (reading.keywords || []).map((k) =>
         `<span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-antiqueGold/15 text-gold border border-antiqueGold/30">#${escapeHTML(k)}</span>`
@@ -1959,15 +1926,9 @@
       document.getElementById('ai-prescription').textContent = reading.prescription;
       document.getElementById('ai-lucky-color').textContent = reading.luckyColor;
       document.getElementById('ai-lucky-item').textContent = reading.luckyItem;
-
-      updateTalismanPreview();
-      updateGeminiFunnelSection();
     }
 
     function render2027UI(f27) {
-      document.getElementById('fortune2027-loading').classList.add('hidden');
-      document.getElementById('fortune2027-content').classList.remove('hidden');
-
       document.getElementById('f27-oneliner').textContent = `“${f27.oneLiner}”`;
       document.getElementById('f27-keywords').innerHTML = (f27.keywords || []).map((k) =>
         `<span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-crimsonSeal/20 text-crimson border border-crimsonSeal/35">#${escapeHTML(k)}</span>`
@@ -2022,9 +1983,6 @@
 
       document.getElementById('f27-warning').textContent = f27.warning;
       document.getElementById('f27-action-tip').textContent = f27.actionTip;
-
-      updateTalismanPreview();
-      updateGeminiFunnelSection();
     }
 
     /*************************************************************************
@@ -2039,7 +1997,7 @@
         p.unknown ? `${p.title}: 시간미상` : `${p.title}: ${p.stem.hanja}${p.branch.hanja}(${p.stem.ko}${p.branch.ko} / ${p.stemGod.name}·${p.branchGod.name})`
       ).join(' | ');
       const elText = ELEMENTS.map((e, i) => `${e.ko}(${e.hanja}) ${s.elCounts[i]}개`).join(', ');
-      const godText = Object.entries(s.godCounts).map(([k, v]) => `${k} ${v}개`).join(', ');
+      const godText = Object.entries(s.godCounts).map(([k, v]) => `${k} ${Math.round(v)}개`).join(', ');
       const arch = ILGAN_ARCHETYPES[s.dayStem];
 
       return `[젬선생 1:1 심층 사주 상담 요청]
@@ -2047,7 +2005,7 @@
 뻔한 교과서 소리("화가 많으니 열정적", "정관이 있으니 성실함")는 절대 빼고, 아래 내 실제 사주 데이터를 바탕으로 소름 돋게 날카롭고 구체적인 1:1 심층 상담을 해줘.
 
 ■ 내 사주 명식
-- 호칭 / 성별: ${state.rawName || '내담자'} / ${state.gender === 'female' ? '여성(곤명)' : '남성(건명)'}
+- 호칭 / 성별: ${state.rawName || '내담자'} / ${state.gender === 'female' ? '여성' : '남성'}
 - 타고난 물상: ${arch.emoji} ${arch.shortTitle} (${arch.hanjaLabel} · ${arch.desc})
 - 사주 8글자: ${pText}
 - 일주(본인): ${s.iljuHanja}(${s.iljuKo}일주) / 월지: ${s.monthBranchLabel} / 강약: ${s.strengthHint}
@@ -2091,7 +2049,6 @@
       document.getElementById('amulet-deficiency-pill').textContent = `${defEl.ko}(${defEl.hanja}) 보완 처방`;
       document.getElementById('amulet-section-sub').textContent = `자네 사주에 비어 있는 ${defEl.ko}(${defEl.hanja}) 기운을 채워주는 맞춤 부적일쎄`;
 
-      // Reset all talisman theme classes
       box.classList.remove('talisman-wood', 'talisman-fire', 'talisman-earth', 'talisman-metal', 'talisman-water', 'talisman-2027');
 
       let kws = [];
@@ -2136,12 +2093,10 @@
       ctx.fillStyle = '#080808';
       ctx.strokeStyle = '#080808';
       if (elId === 0) {
-        // Wood: Bold Black Circle
         ctx.beginPath();
         ctx.arc(cx, cy, 42, 0, Math.PI * 2);
         ctx.fill();
       } else if (elId === 1) {
-        // Fire: Bold Black Flame
         ctx.beginPath();
         ctx.moveTo(cx + 4, cy - 46);
         ctx.bezierCurveTo(cx - 12, cy - 12, cx - 42, cy + 2, cx - 38, cy + 24);
@@ -2151,10 +2106,8 @@
         ctx.closePath();
         ctx.fill();
       } else if (elId === 2) {
-        // Earth: Bold Black Bar
         ctx.fillRect(cx - 64, cy - 16, 128, 32);
       } else if (elId === 3) {
-        // Metal: Bold Black Triangle
         ctx.beginPath();
         ctx.moveTo(cx, cy - 44);
         ctx.lineTo(cx + 50, cy + 40);
@@ -2162,7 +2115,6 @@
         ctx.closePath();
         ctx.fill();
       } else {
-        // Water: 3 Bold Black Waves
         ctx.lineWidth = 10;
         ctx.lineCap = 'round';
         [-24, 0, 24].forEach((dy) => {
@@ -2204,26 +2156,21 @@
       const ctx = canvas.getContext('2d');
       const W = 1080, H = 1350;
 
-      // Stark Black Poster Outer Frame
       ctx.fillStyle = '#080808';
       ctx.fillRect(0, 0, W, H);
 
-      // Bold Flat Oh-Bang-Saek Inner Tag Card (Matching Reference Image)
       ctx.fillStyle = is2027 ? '#DA2C14' : amulet.flatBg;
       ctx.fillRect(48, 48, W - 96, H - 96);
 
-      // Crisp Inner Black Border
       ctx.strokeStyle = '#080808';
       ctx.lineWidth = 8;
       ctx.strokeRect(82, 82, W - 164, H - 164);
 
-      // Signature Top Circular Punch-Hole
       ctx.fillStyle = '#080808';
       ctx.beginPath();
       ctx.arc(W / 2, 166, 36, 0, Math.PI * 2);
       ctx.fill();
 
-      // Header Labels
       ctx.fillStyle = '#080808';
       ctx.font = '900 30px "Gowun Batang", "Noto Serif KR", serif';
       ctx.textAlign = 'left';
@@ -2237,7 +2184,6 @@
       ctx.textAlign = 'center';
       ctx.fillText(badgeLabel, W - 259, 148);
 
-      // Giant Bold Hanja Centerpiece
       ctx.strokeStyle = '#080808';
       ctx.lineWidth = 6;
       ctx.beginPath();
@@ -2269,17 +2215,14 @@
       ctx.font = '700 24px Pretendard, sans-serif';
       ctx.fillText(subText, W / 2, 732);
 
-      // Black High-Contrast Quote Panel
       ctx.fillStyle = '#080808';
       ctx.fillRect(126, 774, W - 252, 224);
       ctx.fillStyle = '#FBF099';
       ctx.font = '700 38px "Gowun Batang", "Noto Serif KR", serif';
       wrapCanvasText(ctx, quoteText, W / 2, 858, 760, 62);
 
-      // Bottom Geometric Oh-Haeng Symbol (Reference Image Motif)
       drawCanvasGeoSymbol(ctx, is2027 ? 1 : defEl.id, W / 2, 1094);
 
-      // Footer
       ctx.fillStyle = '#080808';
       ctx.font = '800 26px Pretendard, sans-serif';
       ctx.textAlign = 'left';
@@ -2299,7 +2242,6 @@
       link.href = canvas.toDataURL('image/png');
       link.click();
 
-      // Open Post-Amulet-Download Conversion Modal
       const savedName = is2027 ? '2027 정미년 개운 부적' : amulet.shortName;
       document.getElementById('modal-amulet-heading').textContent = `허허, 자네만의 [${savedName}]에 효험을 꽉 채워 담았네!`;
       document.getElementById('post-download-modal').classList.remove('hidden');
@@ -2328,16 +2270,15 @@
       rawName: '',
       displayName: '자네',
       gender: 'female',
-      calType: 'solar', // 'solar' | 'lunar' | 'leap'
+      calType: 'solar',
       spice: 'medium',
       talismanStyle: 'compensate',
       saju: null,
       roast: null,
-      fortune2027: null,
-      chatHistory: []
+      fortune2027: null
     };
 
-    // Theme Toggle (Default: Pitch Black Graphic <-> Optional: 한지 라이트)
+    // Theme Toggle (먹색 <-> 한지)
     document.getElementById('theme-toggle-btn').addEventListener('click', () => {
       const isLight = document.body.classList.toggle('light-mode');
       document.getElementById('theme-icon').textContent = isLight ? '⬛' : '☀️';
@@ -2369,7 +2310,7 @@
       });
     });
 
-    // Calendar Toggle (양력 / 음력 평달 / 음력 윤달)
+    // Calendar Toggle
     document.querySelectorAll('.cal-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
         appState.calType = btn.dataset.cal;
@@ -2434,43 +2375,7 @@
       });
     });
 
-    // Independent AI Loaders
-    async function loadMainRoast() {
-      document.getElementById('roast-loading').classList.remove('hidden');
-      document.getElementById('roast-content').classList.add('hidden');
-      document.getElementById('retry-roast-btn').classList.add('hidden');
-      try {
-        const res = await requestMainRoast(appState);
-        appState.roast = res;
-        renderRoastUI(res);
-      } catch (e) {
-        const fb = buildFallbackRoast(appState);
-        appState.roast = fb;
-        renderRoastUI(fb);
-        document.getElementById('retry-roast-btn').classList.remove('hidden');
-      }
-    }
-
-    async function load2027Fortune() {
-      document.getElementById('fortune2027-loading').classList.remove('hidden');
-      document.getElementById('fortune2027-content').classList.add('hidden');
-      document.getElementById('retry-2027-btn').classList.add('hidden');
-      try {
-        const res = await request2027Fortune(appState);
-        appState.fortune2027 = res;
-        render2027UI(res);
-      } catch (e) {
-        const fb = buildFallback2027(appState);
-        appState.fortune2027 = fb;
-        render2027UI(fb);
-        document.getElementById('retry-2027-btn').classList.remove('hidden');
-      }
-    }
-
-    document.getElementById('retry-roast-btn').addEventListener('click', loadMainRoast);
-    document.getElementById('retry-2027-btn').addEventListener('click', load2027Fortune);
-
-    // Form Submission
+    // Form Submission (0.9초 빠른 천기 로딩 연출 후 즉시 표시)
     document.getElementById('saju-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       const rawName = document.getElementById('user-name').value.trim();
@@ -2497,11 +2402,20 @@
       appState.rawName = rawName;
       appState.displayName = rawName ? `${rawName} 자네` : '자네';
       appState.saju = calculateSaju({ solarYear: sY, solarMonth: sM, solarDay: sD, hourBranch, unknownTime });
-      appState.roast = null;
-      appState.fortune2027 = null;
-      appState.chatHistory = [];
+      appState.roast = generateLocalRoast(appState);
+      appState.fortune2027 = generateLocal2027(appState);
 
-      // Populate Profile & Sewoon Immediately
+      // Fast 0.9s Mystical Ritual Animation
+      const overlay = document.getElementById('ritual-overlay');
+      const msgEl = document.getElementById('ritual-msg');
+      msgEl.textContent = '“허허, 자네의 년·월·일·시 여덟 글자를 펼쳐보는 중일쎄...”';
+      overlay.classList.remove('hidden');
+      await new Promise((r) => setTimeout(r, 450));
+      msgEl.textContent = '“2027 정미년의 불꽃이 자네 사주에 어찌 닿을지 살피는 중일쎄...”';
+      await new Promise((r) => setTimeout(r, 450));
+      overlay.classList.add('hidden');
+
+      // Populate UI
       const arch = ILGAN_ARCHETYPES[appState.saju.dayStem];
       document.getElementById('profile-ilju-badge').textContent = appState.saju.iljuHanja;
       document.getElementById('profile-title').textContent = `${arch.emoji} ${arch.shortTitle} · ${appState.saju.iljuKo}일주`;
@@ -2518,6 +2432,8 @@
       renderPillars(appState.saju);
       renderElements(appState.saju);
       renderRadarChart(appState.saju);
+      renderRoastUI(appState.roast);
+      render2027UI(appState.fortune2027);
       updateTalismanPreview();
       updateGeminiFunnelSection();
 
@@ -2525,22 +2441,10 @@
         <div class="flex items-start gap-2">
           <div class="w-8 h-8 rounded-full bg-crimsonSeal/20 border border-antiqueGold/60 flex items-center justify-center text-sm shrink-0">🧙‍♂️</div>
           <div class="mystic-subcard rounded-2xl rounded-tl-sm px-3.5 py-2.5 text-[14px] text-main leading-relaxed">
-            허허, ${escapeHTML(appState.displayName)}! 사주 원국과 2027 정미년 운세는 잘 보았는가? 더 궁금한 천기가 있다면 무엇이든 물어보게나.
+            허허, ${escapeHTML(appState.displayName)}! 사주 원국과 2027 정미년 운세는 잘 보았는가? 이직·재물·연애·귀인 중 궁금한 천기가 있다면 무엇이든 물어보게나.
           </div>
         </div>
       `;
-
-      // Show Mystical Ritual Overlay while AI loads concurrently
-      showRitualOverlay();
-      const minRitualTime = new Promise((r) => setTimeout(r, 1500));
-
-      await Promise.all([
-        minRitualTime,
-        loadMainRoast(),
-        load2027Fortune()
-      ]);
-
-      hideRitualOverlay();
 
       document.getElementById('input-view').classList.add('hidden');
       document.getElementById('results-view').classList.remove('hidden');
@@ -2620,7 +2524,7 @@
     });
 
     /*************************************************************************
-     * 8. SAGE Q&A CHATBOT (TAB 4)
+     * 8. LOCAL SMART SAGE Q&A CHATBOT (TAB 4 - 100% INSTANT, ZERO COST)
      *************************************************************************/
     function appendChatBubble(role, text, isTemp = false) {
       const container = document.getElementById('chat-messages');
@@ -2641,42 +2545,17 @@
       container.scrollTop = container.scrollHeight;
     }
 
-    async function askGemSeonsaeng(question) {
+    function askGemSeonsaeng(question) {
       if (!question.trim() || !appState.saju) return;
       const input = document.getElementById('chat-input');
-      const btn = document.getElementById('chat-send-btn');
-
       input.value = '';
-      input.disabled = true;
-      btn.disabled = true;
-
       appendChatBubble('user', question);
       appendChatBubble('model', '허허, 잠깐만 기다리게나. 별자리를 다시 짚어보는 중일쎄...', true);
 
-      const sysPrompt = `너는 신비로운 팩폭 도사 '젬선생(占先生)'이네.
-[내담자 명식] ${buildSajuContextPrompt(appState)}
-말투 지침: ${SPICE_META[appState.spice].promptGuide}
-반드시 "자네"라고 부르며 "허허,", "~그럴쎄", "~할 것이네", "~명심하게나" 같은 도사 어투로 3~4문장 이내로 명쾌하게 답해 주게.`;
-
-      appState.chatHistory.push({ role: 'user', parts: [{ text: question }] });
-
-      try {
-        const res = await fetchGeminiWithBackoff({
-          contents: appState.chatHistory,
-          systemInstruction: { parts: [{ text: sysPrompt }] }
-        });
-        const reply = res?.candidates?.[0]?.content?.parts?.[0]?.text || '어허, 천기가 잠깐 흐려졌구먼. 한 번만 다시 물어보게나!';
-        appState.chatHistory.push({ role: 'model', parts: [{ text: reply }] });
+      setTimeout(() => {
         document.getElementById('chat-temp-bubble')?.remove();
-        appendChatBubble('model', reply);
-      } catch (e) {
-        document.getElementById('chat-temp-bubble')?.remove();
-        appendChatBubble('model', '허허, 지금 신당에 손님이 몰려 회선이 살짝 붐비는구먼. 숨 좀 고르고 다시 물어보게나!');
-      } finally {
-        input.disabled = false;
-        btn.disabled = false;
-        input.focus();
-      }
+        appendChatBubble('model', generateLocalChatReply(question, appState));
+      }, 360);
     }
 
     document.getElementById('chat-form').addEventListener('submit', (e) => {
