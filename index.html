@@ -153,13 +153,36 @@
       background: var(--input-bg);
       border: 2px solid var(--card-border);
       color: var(--text-main);
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      height: 48px;
       min-height: 48px;
+      -webkit-appearance: none;
+      appearance: none;
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
     .mystic-input:focus {
       outline: none;
       border-color: var(--accent-gold);
       box-shadow: 0 0 0 2px rgba(221, 177, 59, 0.22);
+    }
+    /* iOS Safari 날짜/셀렉트 박스 깨짐 및 가로 넘침 방지 */
+    input[type="date"].mystic-input {
+      display: flex;
+      align-items: center;
+      line-height: 44px;
+      text-align: left;
+      overflow: hidden;
+    }
+    input[type="date"].mystic-input::-webkit-date-and-time-value {
+      text-align: left;
+      margin: 0;
+      width: 100%;
+    }
+    select.mystic-input {
+      line-height: normal;
+      padding-right: 40px;
     }
     body:not(.light-mode) input[type="date"]::-webkit-calendar-picker-indicator {
       filter: invert(0.92);
@@ -447,15 +470,17 @@
             <!-- Native Date Picker -->
             <div>
               <label for="birth-date" class="block text-xs font-bold text-sub mb-1.5">태어난 날 (생년월일)</label>
-              <input
-                type="date"
-                id="birth-date"
-                value="1997-05-14"
-                min="1900-01-01"
-                max="2099-12-31"
-                required
-                class="mystic-input w-full px-4 rounded-xl text-[15px] font-semibold"
-              />
+              <div class="w-full overflow-hidden rounded-xl">
+                <input
+                  type="date"
+                  id="birth-date"
+                  value="1997-05-14"
+                  min="1900-01-01"
+                  max="2099-12-31"
+                  required
+                  class="mystic-input block w-full max-w-full min-w-0 px-4 rounded-xl text-[15px] font-semibold"
+                />
+              </div>
             </div>
 
             <!-- Birth Time (12시진 Dropdown + Unknown Toggle) -->
@@ -467,41 +492,24 @@
                   <span>시간을 모르겠네</span>
                 </label>
               </div>
-              <select id="birth-time-select" class="mystic-input w-full px-4 rounded-xl text-[15px] font-medium">
-                <option value="0">자시 (子時) · 23:30 ~ 01:29</option>
-                <option value="1">축시 (丑時) · 01:30 ~ 03:29</option>
-                <option value="2">인시 (寅時) · 03:30 ~ 05:29</option>
-                <option value="3">묘시 (卯時) · 05:30 ~ 07:29</option>
-                <option value="4">진시 (辰時) · 07:30 ~ 09:29</option>
-                <option value="5">사시 (巳時) · 09:30 ~ 11:29</option>
-                <option value="6" selected>오시 (午時) · 11:30 ~ 13:29</option>
-                <option value="7">미시 (未時) · 13:30 ~ 15:29</option>
-                <option value="8">신시 (申時) · 15:30 ~ 17:29</option>
-                <option value="9">유시 (酉時) · 17:30 ~ 19:29</option>
-                <option value="10">술시 (戌時) · 19:30 ~ 21:29</option>
-                <option value="11">해시 (亥時) · 21:30 ~ 23:29</option>
-              </select>
-            </div>
-
-            <!-- 3-Level Sage Spice Selector Pills -->
-            <div>
-              <span class="block text-xs font-bold text-sub mb-1.5">젬선생의 입담 수위</span>
-              <div class="grid grid-cols-3 gap-2">
-                <button type="button" data-spice="mild" class="spice-btn min-h-[72px] p-2 rounded-xl border text-center transition cursor-pointer text-sub" style="background: var(--input-bg); border-color: var(--card-border);">
-                  <div class="text-base">🕯️</div>
-                  <div class="text-xs font-bold mt-0.5">순한맛</div>
-                  <div class="text-[10px] text-muted">인자한 도사</div>
-                </button>
-                <button type="button" data-spice="medium" class="spice-btn min-h-[72px] p-2 rounded-xl border-2 border-crimsonSeal bg-crimsonSeal/15 text-crimson text-center transition cursor-pointer">
-                  <div class="text-base">🔥</div>
-                  <div class="text-xs font-extrabold mt-0.5">매운맛</div>
-                  <div class="text-[10px] opacity-90">송곳 팩폭</div>
-                </button>
-                <button type="button" data-spice="nuclear" class="spice-btn min-h-[72px] p-2 rounded-xl border text-center transition cursor-pointer text-sub" style="background: var(--input-bg); border-color: var(--card-border);">
-                  <div class="text-base">💀</div>
-                  <div class="text-xs font-bold mt-0.5">핵불닭맛</div>
-                  <div class="text-[10px] text-muted">천기누설 독설</div>
-                </button>
+              <div class="relative w-full">
+                <select id="birth-time-select" class="mystic-input w-full px-4 pr-10 rounded-xl text-[15px] font-medium">
+                  <option value="0">자시 (子時) · 23:30 ~ 01:29</option>
+                  <option value="1">축시 (丑時) · 01:30 ~ 03:29</option>
+                  <option value="2">인시 (寅時) · 03:30 ~ 05:29</option>
+                  <option value="3">묘시 (卯時) · 05:30 ~ 07:29</option>
+                  <option value="4">진시 (辰時) · 07:30 ~ 09:29</option>
+                  <option value="5">사시 (巳時) · 09:30 ~ 11:29</option>
+                  <option value="6" selected>오시 (午時) · 11:30 ~ 13:29</option>
+                  <option value="7">미시 (未時) · 13:30 ~ 15:29</option>
+                  <option value="8">신시 (申時) · 15:30 ~ 17:29</option>
+                  <option value="9">유시 (酉時) · 17:30 ~ 19:29</option>
+                  <option value="10">술시 (戌時) · 19:30 ~ 21:29</option>
+                  <option value="11">해시 (亥時) · 21:30 ~ 23:29</option>
+                </select>
+                <svg class="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gold" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 7.5L10 12.5L15 7.5" />
+                </svg>
               </div>
             </div>
 
